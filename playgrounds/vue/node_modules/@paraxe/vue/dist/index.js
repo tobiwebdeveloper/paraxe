@@ -1,4 +1,4 @@
-import { defineComponent as m, computed as b, openBlock as n, createElementBlock as d, normalizeClass as f, renderSlot as u, createBlock as T, resolveDynamicComponent as A, withCtx as L, createCommentVNode as $, createElementVNode as p, createTextVNode as R, toDisplayString as S, ref as V, provide as M, inject as z, withDirectives as te, vShow as ae, useModel as se, watch as K, mergeModels as Q, withKeys as j, withModifiers as Y, unref as N, Fragment as q, renderList as G, normalizeStyle as W, useSlots as le, onMounted as J, onBeforeUnmount as O, Teleport as U, nextTick as Z } from "vue";
+import { defineComponent as m, computed as b, openBlock as n, createElementBlock as d, normalizeClass as f, renderSlot as u, createBlock as E, resolveDynamicComponent as z, withCtx as L, createCommentVNode as $, createElementVNode as p, createTextVNode as F, toDisplayString as V, ref as x, provide as K, inject as O, withDirectives as te, vShow as ae, useModel as se, watch as P, mergeModels as Q, withKeys as j, withModifiers as Y, unref as N, Fragment as M, renderList as G, normalizeStyle as W, useSlots as le, onMounted as J, onBeforeUnmount as R, Teleport as U, nextTick as Z } from "vue";
 const oe = ["disabled"], It = /* @__PURE__ */ m({
   __name: "Button",
   props: {
@@ -39,7 +39,7 @@ const oe = ["disabled"], It = /* @__PURE__ */ m({
       "card",
       `card-${e.variant}`
     ]);
-    return (s, l) => (n(), T(A(e.as), {
+    return (s, l) => (n(), E(z(e.as), {
       class: f(t.value)
     }, {
       default: L(() => [
@@ -161,7 +161,7 @@ const At = /* @__PURE__ */ H(ie, [["render", de]]), Mt = /* @__PURE__ */ m({
       "heading-sm": e.level === "h4",
       "heading-xs": e.level === "h5" || e.level === "h6"
     }));
-    return (s, l) => (n(), T(A(a.level), {
+    return (s, l) => (n(), E(z(a.level), {
       class: f(t.value)
     }, {
       default: L(() => [
@@ -185,7 +185,7 @@ const At = /* @__PURE__ */ H(ie, [["render", de]]), Mt = /* @__PURE__ */ m({
       "text-inverse": e.tone === "inverse",
       "text-brand": e.tone === "brand"
     }));
-    return (s, l) => (n(), T(A(e.as), {
+    return (s, l) => (n(), E(z(e.as), {
       class: f(t.value)
     }, {
       default: L(() => [
@@ -200,7 +200,7 @@ function pe(a, e) {
     u(a.$slots, "default")
   ]);
 }
-const Pt = /* @__PURE__ */ H(ce, [["render", pe]]), Ft = /* @__PURE__ */ m({
+const Pt = /* @__PURE__ */ H(ce, [["render", pe]]), Rt = /* @__PURE__ */ m({
   __name: "SectionHeader",
   props: {
     width: { default: "default" },
@@ -217,7 +217,7 @@ const Pt = /* @__PURE__ */ H(ce, [["render", pe]]), Ft = /* @__PURE__ */ m({
       u(t.$slots, "default")
     ], 2));
   }
-}), Rt = /* @__PURE__ */ m({
+}), Ft = /* @__PURE__ */ m({
   __name: "ButtonGroup",
   props: {
     align: { default: "start" },
@@ -304,7 +304,7 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
   setup(a) {
     const e = a;
     return (t, s) => (n(), d("div", $e, [
-      e.label ? (n(), T(ye, {
+      e.label ? (n(), E(ye, {
         key: 0,
         for: e.id,
         required: e.required,
@@ -312,26 +312,26 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
         disabled: e.disabled
       }, {
         default: L(() => [
-          R(S(e.label), 1)
+          F(V(e.label), 1)
         ]),
         _: 1
       }, 8, ["for", "required", "optional", "disabled"])) : $("", !0),
       u(t.$slots, "default"),
-      e.description && !e.error ? (n(), T(X, {
+      e.description && !e.error ? (n(), E(X, {
         key: 1,
         tone: "muted"
       }, {
         default: L(() => [
-          R(S(e.description), 1)
+          F(V(e.description), 1)
         ]),
         _: 1
       })) : $("", !0),
-      e.error ? (n(), T(X, {
+      e.error ? (n(), E(X, {
         key: 2,
         tone: "accent"
       }, {
         default: L(() => [
-          R(S(e.error), 1)
+          F(V(e.error), 1)
         ]),
         _: 1
       })) : $("", !0)
@@ -407,7 +407,7 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
     defaultOpen: { default: () => [] }
   },
   setup(a) {
-    const e = a, t = V([...e.defaultOpen]);
+    const e = a, t = x([...e.defaultOpen]);
     function s(o) {
       return t.value.includes(o);
     }
@@ -424,7 +424,7 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
       }
       t.value = [o];
     }
-    return M("loba-accordion", {
+    return K("loba-accordion", {
       openItems: t,
       isOpen: s,
       toggleItem: l
@@ -439,7 +439,7 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
     disabled: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = z("loba-accordion");
+    const e = a, t = O("loba-accordion");
     if (!t)
       throw new Error(
         "AccordionItem must be used inside an Accordion."
@@ -513,7 +513,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     const e = a, t = b(() => [
       "empty-state"
     ]);
-    return (s, l) => (n(), T(A(e.as), {
+    return (s, l) => (n(), E(z(e.as), {
       class: f(t.value)
     }, {
       default: L(() => [
@@ -543,8 +543,8 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
   }),
   emits: /* @__PURE__ */ Q(["update:modelValue"], ["update:modelValue"]),
   setup(a, { emit: e }) {
-    const t = a, s = V(/* @__PURE__ */ new Set()), l = se(a, "modelValue");
-    K(
+    const t = a, s = x(/* @__PURE__ */ new Set()), l = se(a, "modelValue");
+    P(
       l,
       (i) => {
         if (i == null) {
@@ -570,7 +570,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
       const y = [...c];
       l.value = t.multiple ? y : y[0] ?? null;
     }
-    return M("loba-list", {
+    return K("loba-list", {
       selectable: t.selectable,
       multiple: t.multiple,
       isSelected: o,
@@ -586,7 +586,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     disabled: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = z("loba-list");
+    const e = a, t = O("loba-list");
     if (!t)
       throw new Error(
         "ListItem must be used inside a List."
@@ -625,7 +625,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
 }), Ae = { class: "pagination-controls" }, Me = ["disabled"], ze = ["disabled"], Ke = { class: "pagination-pages" }, Oe = {
   key: 0,
   class: "pagination-ellipsis"
-}, Pe = ["aria-current", "onClick"], Fe = { class: "pagination-controls" }, Re = ["disabled"], Ge = ["disabled"], ta = /* @__PURE__ */ m({
+}, Pe = ["aria-current", "onClick"], Re = { class: "pagination-controls" }, Fe = ["disabled"], Ge = ["disabled"], ta = /* @__PURE__ */ m({
   __name: "Pagination",
   props: {
     currentPage: {},
@@ -649,27 +649,27 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         l.value
       )
     ), r = b(() => {
-      const g = l.value, B = o.value, k = Math.max(
+      const g = l.value, B = o.value, w = Math.max(
         0,
         t.siblingCount
       );
       if (g <= 7)
         return Array.from(
           { length: g },
-          (F, ee) => ee + 1
+          (A, ee) => ee + 1
         );
-      const _ = Math.max(
-        B - k,
+      const q = Math.max(
+        B - w,
         1
-      ), w = Math.min(
-        B + k,
+      ), v = Math.min(
+        B + w,
         g
-      ), v = _ > 2, C = w < g - 1, x = [1];
-      v && x.push("...");
-      const I = v ? _ : 2, P = C ? w : g - 1;
-      for (let F = I; F <= P; F++)
-        x.push(F);
-      return C && x.push("..."), x.push(g), x;
+      ), C = q > 2, h = v < g - 1, k = [1];
+      C && k.push("...");
+      const D = C ? q : 2, I = h ? v : g - 1;
+      for (let A = D; A <= I; A++)
+        k.push(A);
+      return h && k.push("..."), k.push(g), k;
     }), i = b(() => ({
       pagination: !0,
       "pagination-compact": t.compact
@@ -687,13 +687,13 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     function y() {
       c(o.value - 1);
     }
-    function D() {
+    function T() {
       c(o.value + 1);
     }
-    function E() {
+    function S() {
       c(1);
     }
-    function h() {
+    function _() {
       c(l.value);
     }
     return (g, B) => (n(), d("nav", {
@@ -708,7 +708,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
           type: "button",
           disabled: o.value === 1,
           "aria-label": "First page",
-          onClick: E
+          onClick: S
         }, " « ", 10, Me),
         p("button", {
           class: f(["pagination-item", {
@@ -721,21 +721,21 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         }, " ‹ ", 10, ze)
       ]),
       p("div", Ke, [
-        (n(!0), d(q, null, G(r.value, (k, _) => (n(), d(q, {
-          key: `${k}-${_}`
+        (n(!0), d(M, null, G(r.value, (w, q) => (n(), d(M, {
+          key: `${w}-${q}`
         }, [
-          k === "..." ? (n(), d("span", Oe, " … ")) : (n(), d("button", {
+          w === "..." ? (n(), d("span", Oe, " … ")) : (n(), d("button", {
             key: 1,
             class: f(["pagination-item", {
-              "pagination-item--current": k === o.value
+              "pagination-item--current": w === o.value
             }]),
             type: "button",
-            "aria-current": k === o.value ? "page" : void 0,
-            onClick: (w) => c(k)
-          }, S(k), 11, Pe))
+            "aria-current": w === o.value ? "page" : void 0,
+            onClick: (v) => c(w)
+          }, V(w), 11, Pe))
         ], 64))), 128))
       ]),
-      p("div", Fe, [
+      p("div", Re, [
         p("button", {
           class: f(["pagination-item", {
             "pagination-item--disabled": o.value === l.value
@@ -743,8 +743,8 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
           type: "button",
           disabled: o.value === l.value,
           "aria-label": "Next page",
-          onClick: D
-        }, " › ", 10, Re),
+          onClick: T
+        }, " › ", 10, Fe),
         p("button", {
           class: f(["pagination-item", {
             "pagination-item--disabled": o.value === l.value
@@ -752,7 +752,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
           type: "button",
           disabled: o.value === l.value,
           "aria-label": "Last page",
-          onClick: h
+          onClick: _
         }, " » ", 10, Ge)
       ])
     ], 2));
@@ -775,43 +775,41 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     multiple: { type: Boolean, default: !1 },
     loading: { type: Boolean, default: !1 }
   },
-  emits: ["update:selectedRows", "sort"],
+  emits: ["update:selectedRows", "sort", "row-click"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = V(
-      null
-    ), o = V("asc"), r = V(/* @__PURE__ */ new Set());
-    function i(_, w) {
-      if (!(typeof _ != "object" || _ === null))
-        return _[w];
+    const t = a, s = e, l = x(null), o = x("asc"), r = x(/* @__PURE__ */ new Set());
+    function i(v, C) {
+      if (!(typeof v != "object" || v === null))
+        return v[C];
     }
-    function c(_) {
-      const w = i(
-        _,
+    function c(v) {
+      const C = i(
+        v,
         t.rowKey
       );
-      return typeof w == "string" || typeof w == "number" ? w : t.rows.indexOf(_);
+      return typeof C == "string" || typeof C == "number" ? C : t.rows.indexOf(v);
     }
-    function y(_) {
+    function y(v) {
       return r.value.has(
-        c(_)
+        c(v)
       );
     }
-    const D = b(() => {
+    const T = b(() => {
       if (!t.sortable || !l.value)
         return t.rows;
-      const _ = l.value, w = o.value;
+      const v = l.value, C = o.value;
       return [...t.rows].sort(
-        (v, C) => {
-          const x = i(v, _), I = i(C, _);
-          if (x === I)
+        (h, k) => {
+          const D = i(h, v), I = i(k, v);
+          if (D === I)
             return 0;
-          if (x == null)
+          if (D == null)
             return 1;
           if (I == null)
             return -1;
-          if (typeof x == "number" && typeof I == "number")
-            return w === "asc" ? x - I : I - x;
-          const P = String(x).localeCompare(
+          if (typeof D == "number" && typeof I == "number")
+            return C === "asc" ? D - I : I - D;
+          const A = String(D).localeCompare(
             String(I),
             void 0,
             {
@@ -819,95 +817,104 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
               sensitivity: "base"
             }
           );
-          return w === "asc" ? P : -P;
+          return C === "asc" ? A : -A;
         }
       );
     });
-    function E(_) {
-      !t.sortable || !_.sortable || (l.value !== _.key ? (l.value = _.key, o.value = "asc") : o.value = o.value === "asc" ? "desc" : "asc", s("sort", {
-        key: _.key,
+    function S(v) {
+      !t.sortable || !v.sortable || (l.value !== v.key ? (l.value = v.key, o.value = "asc") : o.value = o.value === "asc" ? "desc" : "asc", s("sort", {
+        key: v.key,
         direction: o.value
       }));
     }
-    function h(_) {
+    function _(v) {
       if (!t.selectable)
         return;
-      const w = c(_), v = new Set(
+      const C = c(v), h = new Set(
         r.value
       );
-      t.multiple ? v.has(w) ? v.delete(w) : v.add(w) : (v.clear(), v.add(w)), r.value = v, s(
+      t.multiple ? h.has(C) ? h.delete(C) : h.add(C) : (h.clear(), h.add(C)), r.value = h, s(
         "update:selectedRows",
         t.rows.filter(
-          (C) => v.has(c(C))
+          (k) => h.has(c(k))
         )
       );
     }
-    function g(_) {
-      return l.value !== _.key ? "" : o.value === "asc" ? "↑" : "↓";
+    function g(v) {
+      t.selectable && _(v), s("row-click", v);
     }
-    function B(_) {
+    function B(v) {
+      return l.value !== v.key ? "" : o.value === "asc" ? "↑" : "↓";
+    }
+    function w(v) {
       return {
-        [`table-cell--${_.align ?? "start"}`]: !0
+        [`table-cell--${v.align ?? "start"}`]: !0
       };
     }
-    function k(_) {
-      return l.value === _.key;
+    function q(v) {
+      return l.value === v.key;
     }
-    return (_, w) => (n(), d("div", je, [
+    return (v, C) => (n(), d("div", je, [
       p("table", null, [
         p("thead", null, [
           p("tr", null, [
-            (n(!0), d(q, null, G(a.columns, (v) => (n(), d("th", {
-              key: v.key,
+            (n(!0), d(M, null, G(a.columns, (h) => (n(), d("th", {
+              key: h.key,
               style: W({
-                width: v.width
+                width: h.width
               }),
               class: f([
-                B(v),
+                w(h),
                 {
-                  "table-header--sortable": a.sortable && v.sortable,
-                  "table-header--sorted": k(v)
+                  "table-header--sortable": a.sortable && h.sortable,
+                  "table-header--sorted": q(h)
                 }
               ]),
-              tabindex: a.sortable && v.sortable ? 0 : void 0,
-              "aria-sort": k(v) ? o.value === "asc" ? "ascending" : "descending" : void 0,
-              onClick: (C) => E(v),
+              tabindex: a.sortable && h.sortable ? 0 : void 0,
+              "aria-sort": q(h) ? o.value === "asc" ? "ascending" : "descending" : void 0,
+              onClick: (k) => S(h),
               onKeydown: [
-                j((C) => E(v), ["enter"]),
-                j(Y((C) => E(v), ["prevent"]), ["space"])
+                j((k) => S(h), ["enter"]),
+                j(Y((k) => S(h), ["prevent"]), ["space"])
               ]
             }, [
-              p("span", null, S(v.label), 1),
-              a.sortable && v.sortable ? (n(), d("span", Ne, S(g(v)), 1)) : $("", !0)
+              p("span", null, V(h.label), 1),
+              a.sortable && h.sortable ? (n(), d("span", Ne, V(B(h)), 1)) : $("", !0)
             ], 46, He))), 128))
           ])
         ]),
         p("tbody", null, [
-          (n(!0), d(q, null, G(D.value, (v) => (n(), d("tr", {
-            key: c(v),
+          (n(!0), d(M, null, G(T.value, (h) => (n(), d("tr", {
+            key: c(h),
             class: f({
-              "table-row--selected": y(v)
+              "table-row--selected": y(h),
+              "table-row--clickable": !0
             }),
-            onClick: (C) => a.selectable && h(v)
+            onClick: (k) => g(h)
           }, [
-            (n(!0), d(q, null, G(a.columns, (C) => (n(), d("td", {
-              key: C.key,
+            (n(!0), d(M, null, G(a.columns, (k) => (n(), d("td", {
+              key: k.key,
               class: f(
-                B(C)
+                w(k)
               )
             }, [
-              u(_.$slots, `cell-${C.key}`, {
-                row: v,
-                value: i(
-                  v,
-                  C.key
-                )
-              }, () => [
-                R(S(i(
-                  v,
-                  C.key
-                )), 1)
-              ])
+              u(
+                v.$slots,
+                `cell-${k.key}`,
+                {
+                  row: h,
+                  value: i(
+                    h,
+                    k.key
+                  )
+                },
+                () => [
+                  F(V(i(
+                    h,
+                    k.key
+                  )), 1)
+                ]
+              )
             ], 2))), 128))
           ], 10, We))), 128))
         ])
@@ -1074,7 +1081,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         );
       }
     }
-    return M(
+    return K(
       "loba-choice-group",
       {
         multiple: t.multiple,
@@ -1096,7 +1103,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     disabled: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = z(
+    const e = a, t = O(
       "loba-choice-group"
     );
     if (!t)
@@ -1165,7 +1172,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     return (s, l) => (n(), d("div", {
       class: f(t.value)
     }, [
-      e.label ? (n(), d("div", st, S(e.label), 1)) : $("", !0),
+      e.label ? (n(), d("div", st, V(e.label), 1)) : $("", !0),
       p("div", lt, [
         u(s.$slots, "default")
       ])
@@ -1191,7 +1198,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     expanded: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = le(), s = V(
+    const e = a, t = le(), s = x(
       e.expanded
     ), l = b(
       () => !!t.children
@@ -1210,7 +1217,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
       l.value && (i.preventDefault(), s.value = !s.value);
     }
     return (i, c) => (n(), d("div", ot, [
-      (n(), T(A(l.value ? "button" : "a"), {
+      (n(), E(z(l.value ? "button" : "a"), {
         href: l.value || !e.href ? void 0 : e.href,
         type: l.value ? "button" : void 0,
         class: f(o.value),
@@ -1252,8 +1259,8 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
   },
   emits: ["update:modelValue"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = V(t.modelValue);
-    K(
+    const t = a, s = e, l = x(t.modelValue);
+    P(
       () => t.modelValue,
       (r) => {
         l.value = r;
@@ -1265,7 +1272,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         r
       );
     }
-    return M(
+    return K(
       "loba-tabs",
       {
         activeValue: () => l.value,
@@ -1284,7 +1291,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     disabled: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = z("loba-tabs");
+    const e = a, t = O("loba-tabs");
     if (!t)
       throw new Error(
         "Tab must be used inside Tabs."
@@ -1321,7 +1328,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     current: { type: Boolean, default: !1 }
   },
   setup(a) {
-    const e = a, t = z(
+    const e = a, t = O(
       "loba-breadcrumbs-separator",
       "/"
     ), s = b(() => ({
@@ -1343,7 +1350,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
       }, [
         u(l.$slots, "default")
       ], 8, mt)),
-      p("span", bt, S(N(t)), 1)
+      p("span", bt, V(N(t)), 1)
     ], 2));
   }
 }), vt = {
@@ -1355,7 +1362,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     separator: { default: "/" }
   },
   setup(a) {
-    return M(
+    return K(
       "loba-breadcrumbs-separator",
       a.separator
     ), (t, s) => (n(), d("nav", vt, [
@@ -1377,7 +1384,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
   },
   emits: ["update:modelValue"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = V(null);
+    const t = a, s = e, l = x(null);
     let o = null;
     const r = [
       "button:not([disabled])",
@@ -1393,14 +1400,14 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     function c() {
       t.closeOnBackdrop && i();
     }
-    function y(h) {
+    function y(_) {
       if (!t.modelValue || !l.value)
         return;
-      if (h.key === "Escape" && t.closeOnEscape) {
-        h.preventDefault(), i();
+      if (_.key === "Escape" && t.closeOnEscape) {
+        _.preventDefault(), i();
         return;
       }
-      if (h.key !== "Tab")
+      if (_.key !== "Tab")
         return;
       const g = Array.from(
         l.value.querySelectorAll(
@@ -1408,40 +1415,40 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         )
       );
       if (g.length === 0) {
-        h.preventDefault();
+        _.preventDefault();
         return;
       }
-      const B = g[0], k = g[g.length - 1];
-      if (h.shiftKey && document.activeElement === B) {
-        h.preventDefault(), k.focus();
+      const B = g[0], w = g[g.length - 1];
+      if (_.shiftKey && document.activeElement === B) {
+        _.preventDefault(), w.focus();
         return;
       }
-      !h.shiftKey && document.activeElement === k && (h.preventDefault(), B.focus());
+      !_.shiftKey && document.activeElement === w && (_.preventDefault(), B.focus());
     }
-    async function D() {
+    async function T() {
       o = document.activeElement instanceof HTMLElement ? document.activeElement : null, await Z(), l.value?.querySelector(
         r
       )?.focus();
     }
-    function E() {
+    function S() {
       o?.focus(), o = null;
     }
-    return K(
+    return P(
       () => t.modelValue,
-      async (h) => {
-        h ? await D() : E();
+      async (_) => {
+        _ ? await T() : S();
       }
     ), J(() => {
-      t.modelValue && D(), document.addEventListener(
+      t.modelValue && T(), document.addEventListener(
         "keydown",
         y
       );
-    }), O(() => {
+    }), R(() => {
       document.removeEventListener(
         "keydown",
         y
-      ), E();
-    }), (h, g) => (n(), T(U, { to: "body" }, [
+      ), S();
+    }), (_, g) => (n(), E(U, { to: "body" }, [
       a.modelValue ? (n(), d("div", _t, [
         p("button", {
           class: "dialog-backdrop",
@@ -1457,7 +1464,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
           role: "dialog",
           "aria-modal": "true"
         }, [
-          u(h.$slots, "default")
+          u(_.$slots, "default")
         ], 512)
       ])) : $("", !0)
     ]));
@@ -1472,7 +1479,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
   },
   emits: ["update:modelValue"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = V(null);
+    const t = a, s = e, l = x(null);
     let o = null;
     const r = [
       "button:not([disabled])",
@@ -1488,14 +1495,14 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     function c() {
       t.closeOnBackdrop && i();
     }
-    function y(h) {
+    function y(_) {
       if (!t.modelValue || !l.value)
         return;
-      if (h.key === "Escape" && t.closeOnEscape) {
-        h.preventDefault(), i();
+      if (_.key === "Escape" && t.closeOnEscape) {
+        _.preventDefault(), i();
         return;
       }
-      if (h.key !== "Tab")
+      if (_.key !== "Tab")
         return;
       const g = Array.from(
         l.value.querySelectorAll(
@@ -1503,40 +1510,40 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         )
       );
       if (g.length === 0) {
-        h.preventDefault();
+        _.preventDefault();
         return;
       }
-      const B = g[0], k = g[g.length - 1];
-      if (h.shiftKey && document.activeElement === B) {
-        h.preventDefault(), k.focus();
+      const B = g[0], w = g[g.length - 1];
+      if (_.shiftKey && document.activeElement === B) {
+        _.preventDefault(), w.focus();
         return;
       }
-      !h.shiftKey && document.activeElement === k && (h.preventDefault(), B.focus());
+      !_.shiftKey && document.activeElement === w && (_.preventDefault(), B.focus());
     }
-    async function D() {
+    async function T() {
       o = document.activeElement instanceof HTMLElement ? document.activeElement : null, await Z(), l.value?.querySelector(
         r
       )?.focus();
     }
-    function E() {
+    function S() {
       o?.focus(), o = null;
     }
-    return K(
+    return P(
       () => t.modelValue,
-      async (h) => {
-        h ? await D() : E();
+      async (_) => {
+        _ ? await T() : S();
       }
     ), J(() => {
       document.addEventListener(
         "keydown",
         y
-      ), t.modelValue && D();
-    }), O(() => {
+      ), t.modelValue && T();
+    }), R(() => {
       document.removeEventListener(
         "keydown",
         y
-      ), E();
-    }), (h, g) => (n(), T(U, { to: "body" }, [
+      ), S();
+    }), (_, g) => (n(), E(U, { to: "body" }, [
       a.modelValue ? (n(), d("div", {
         key: 0,
         class: f(["drawer", {
@@ -1561,7 +1568,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
           "aria-modal": "true"
         }, [
           p("div", yt, [
-            u(h.$slots, "default")
+            u(_.$slots, "default")
           ])
         ], 512)
       ], 2)) : $("", !0)
@@ -1577,7 +1584,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     placement: { default: "bottom" }
   },
   setup(a) {
-    const e = a, t = V(!1), s = V(null);
+    const e = a, t = x(!1), s = x(null);
     function l() {
       t.value = !t.value;
     }
@@ -1601,7 +1608,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         "keydown",
         i
       );
-    }), O(() => {
+    }), R(() => {
       document.removeEventListener(
         "click",
         r
@@ -1639,7 +1646,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     delay: { default: 300 }
   },
   setup(a) {
-    const e = a, t = V(!1);
+    const e = a, t = x(!1);
     let s;
     function l() {
       clearTimeout(s), s = setTimeout(() => {
@@ -1649,7 +1656,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
     function o() {
       clearTimeout(s), t.value = !1;
     }
-    return O(() => {
+    return R(() => {
       clearTimeout(s);
     }), (r, i) => (n(), d("span", {
       class: f(["tooltip", {
@@ -1664,7 +1671,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
       p("span", $t, [
         u(r.$slots, "default")
       ]),
-      p("span", kt, S(e.text), 1)
+      p("span", kt, V(e.text), 1)
     ], 34));
   }
 }), wt = { class: "alert-content" }, Ct = {
@@ -1749,7 +1756,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         p("span", null, [
           u(l.$slots, "default")
         ]),
-        p("span", null, S(Math.round(t.value)) + "% ", 1)
+        p("span", null, V(Math.round(t.value)) + "% ", 1)
       ])) : u(l.$slots, "label", {}, void 0, void 0, 1)
     ], 10, Bt));
   }
@@ -1788,7 +1795,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
   },
   emits: ["update:modelValue", "close"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = V(
+    const t = a, s = e, l = x(
       t.modelValue
     );
     let o;
@@ -1806,7 +1813,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         i();
       }, t.duration));
     }
-    return K(
+    return P(
       () => t.modelValue,
       (y) => {
         l.value = y, y ? c() : r();
@@ -1814,9 +1821,9 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
       {
         immediate: !0
       }
-    ), O(() => {
+    ), R(() => {
       r();
-    }), (y, D) => (n(), T(U, { to: "body" }, [
+    }), (y, T) => (n(), E(U, { to: "body" }, [
       l.value ? (n(), d("div", {
         key: 0,
         class: f(["toast", {
@@ -1827,7 +1834,7 @@ const Qt = /* @__PURE__ */ H(Ve, [["render", Ee]]), Xt = /* @__PURE__ */ m({
         "aria-live": "polite"
       }, [
         p("div", St, [
-          a.title ? (n(), d("div", Et, S(a.title), 1)) : $("", !0),
+          a.title ? (n(), d("div", Et, V(a.title), 1)) : $("", !0),
           p("div", Tt, [
             u(y.$slots, "default")
           ])
@@ -1851,7 +1858,7 @@ export {
   fa as Breadcrumb,
   ma as Breadcrumbs,
   It as Button,
-  Rt as ButtonGroup,
+  Ft as ButtonGroup,
   Lt as Card,
   sa as Checkbox,
   ia as Choice,
@@ -1875,7 +1882,7 @@ export {
   ga as Progress,
   la as Radio,
   At as Section,
-  Ft as SectionHeader,
+  Rt as SectionHeader,
   Wt as Select,
   ra as Sidebar,
   da as SidebarGroup,

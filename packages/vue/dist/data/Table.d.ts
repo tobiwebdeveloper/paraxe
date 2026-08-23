@@ -28,12 +28,14 @@ declare const __VLS_base: import('vue').DefineComponent<__VLS_Props, {}, {}, {},
         direction: "asc" | "desc";
     }) => any;
     "update:selectedRows": (rows: unknown[]) => any;
+    "row-click": (row: unknown) => any;
 }, string, import('vue').PublicProps, Readonly<__VLS_Props> & Readonly<{
     onSort?: ((payload: {
         key: string;
         direction: "asc" | "desc";
     }) => any) | undefined;
     "onUpdate:selectedRows"?: ((rows: unknown[]) => any) | undefined;
+    "onRow-click"?: ((row: unknown) => any) | undefined;
 }>, {
     loading: boolean;
     multiple: boolean;

@@ -1,12 +1,11 @@
+```vue
 <script setup lang="ts">
 import {
   computed,
   ref,
 } from "vue";
 
-export interface TableColumn<
-  T = unknown,
-> {
+export interface TableColumn<T = unknown> {
   key: string;
   label: string;
   sortable?: boolean;
@@ -14,9 +13,7 @@ export interface TableColumn<
   align?: "start" | "center" | "end";
 }
 
-export interface TableProps<
-  T = unknown,
-> {
+export interface TableProps<T = unknown> {
   columns: TableColumn<T>[];
   rows: T[];
   rowKey?: string;
@@ -41,18 +38,16 @@ const emit = defineEmits<{
   "update:selectedRows": [
     rows: unknown[],
   ];
-
   sort: [
     payload: {
       key: string;
       direction: "asc" | "desc";
     },
   ];
+  "row-click": [row: unknown];
 }>();
 
-const sortKey = ref<string | null>(
-  null,
-);
+const sortKey = ref<string | null>(null);
 
 const sortDirection = ref<
   "asc" | "desc"
@@ -101,7 +96,7 @@ function getRowKey(
 
 function isSelected(
   row: unknown,
-) {
+): boolean {
   return selectedKeys.value.has(
     getRowKey(row),
   );
@@ -123,12 +118,11 @@ const sortedRows = computed(() => {
     (a, b) => {
       const aValue =
         getRowValue(a, key);
+
       const bValue =
         getRowValue(b, key);
 
-      if (
-        aValue === bValue
-      ) {
+      if (aValue === bValue) {
         return 0;
       }
 
@@ -174,7 +168,7 @@ const sortedRows = computed(() => {
 
 function toggleSort(
   column: TableColumn,
-) {
+): void {
   if (
     !props.sortable ||
     !column.sortable
@@ -182,7 +176,9 @@ function toggleSort(
     return;
   }
 
-  if (sortKey.value !== column.key) {
+  if (
+    sortKey.value !== column.key
+  ) {
     sortKey.value = column.key;
     sortDirection.value = "asc";
   } else {
@@ -201,7 +197,7 @@ function toggleSort(
 
 function toggleRowSelection(
   row: unknown,
-) {
+): void {
   if (!props.selectable) {
     return;
   }
@@ -233,9 +229,19 @@ function toggleRowSelection(
   );
 }
 
+function handleRowClick(
+  row: unknown,
+): void {
+  if (props.selectable) {
+    toggleRowSelection(row);
+  }
+
+  emit("row-click", row);
+}
+
 function sortIndicator(
   column: TableColumn,
-) {
+): string {
   if (
     sortKey.value !== column.key
   ) {
@@ -252,14 +258,15 @@ function cellClass(
   column: TableColumn,
 ) {
   return {
-    [`table-cell--${column.align ?? "start"}`]:
-      true,
+    [`table-cell--${
+      column.align ?? "start"
+    }`]: true,
   };
 }
 
 function isSorted(
   column: TableColumn,
-) {
+): boolean {
   return (
     sortKey.value === column.key
   );
@@ -283,7 +290,6 @@ function isSorted(
                 'table-header--sortable':
                   sortable &&
                   column.sortable,
-
                 'table-header--sorted':
                   isSorted(column),
               },
@@ -338,10 +344,10 @@ function isSorted(
           :class="{
             'table-row--selected':
               isSelected(row),
+            'table-row--clickable': true,
           }"
           @click="
-            selectable &&
-            toggleRowSelection(row)
+            handleRowClick(row)
           "
         >
           <td
@@ -352,7 +358,9 @@ function isSorted(
             "
           >
             <slot
-              :name="`cell-${column.key}`"
+              :name="
+                `cell-${column.key}`
+              "
               :row="row"
               :value="
                 getRowValue(
@@ -380,3 +388,11 @@ function isSorted(
     />
   </div>
 </template>
+
+<Table
+  :columns="columns"
+  :rows="currentPageProspects"
+  row-key="id"
+  sortable
+  @row-click="openProspect"
+/>
