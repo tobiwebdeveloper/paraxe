@@ -1,16 +1,32 @@
 <script setup lang="ts">
-import { Input } from "@paraxe/vue";
 import { ref } from "vue";
+import { Select, Text } from "@paraxe/vue";
 
-const value = ref("Hello");
-
-const emitValue = (event: Event) => {
-  value.value = (event.target as HTMLInputElement).value;
-};
+const value = ref("");
 </script>
 
 <template>
-  <Input v-model="value" />
+  <div>
+    <Select v-model="value">
+      <option value="" disabled>
+        Choose a prospect
+      </option>
 
-  <Text>Value: {{ value }}</Text>
+      <option value="15">
+        Prospect 15
+      </option>
+
+      <option value="20">
+        Prospect 20
+      </option>
+
+      <option value="25">
+        Prospect 25
+      </option>
+    </Select>
+
+    <Text>
+      Selected: {{ value }}
+    </Text>
+  </div>
 </template>

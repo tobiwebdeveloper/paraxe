@@ -1,5 +1,5 @@
 interface Props {
-    value?: string;
+    modelValue?: string;
     disabled?: boolean;
     error?: boolean;
     success?: boolean;
@@ -9,14 +9,14 @@ type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
 declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-    change: (value: string) => any;
+    "update:modelValue": (value: string) => any;
 }, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
-    onChange?: ((value: string) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: string) => any) | undefined;
 }>, {
     disabled: boolean;
+    modelValue: string;
     error: boolean;
     success: boolean;
-    value: string;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
 declare const _default: typeof __VLS_export;

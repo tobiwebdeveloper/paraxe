@@ -374,26 +374,27 @@ const Gt = /* @__PURE__ */ H(fe, [["render", be]]), ve = ["for"], he = {
 }), we = ["value", "disabled"], Wt = /* @__PURE__ */ m({
   __name: "Select",
   props: {
-    value: { default: "" },
+    modelValue: { default: "" },
     disabled: { type: Boolean, default: !1 },
     error: { type: Boolean, default: !1 },
     success: { type: Boolean, default: !1 }
   },
-  emits: ["change"],
+  emits: ["update:modelValue"],
   setup(a, { emit: e }) {
-    const t = a, s = e, l = b(() => ({
+    const t = a, s = e;
+    function l(r) {
+      const i = r.target;
+      s("update:modelValue", i.value);
+    }
+    const o = b(() => ({
       "input-error": t.error,
       "input-success": t.success
     }));
-    function o(r) {
-      const i = r.target;
-      s("change", i.value);
-    }
     return (r, i) => (n(), d("select", {
-      class: f(["select", l.value]),
-      value: t.value,
+      class: f(["select", o.value]),
+      value: t.modelValue,
       disabled: t.disabled,
-      onChange: o
+      onChange: l
     }, [
       u(r.$slots, "default")
     ], 42, we));
