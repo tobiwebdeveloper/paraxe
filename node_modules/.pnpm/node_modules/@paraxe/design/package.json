@@ -1,0 +1,50 @@
+{
+  "name": "@paraxe/design",
+  "version": "1.4.2",
+  "description": "Paraxe design system — canonical tokens, themes, and presets. Source of truth for the entire ecosystem.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "style": "./dist/index.css",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./style.css": "./src/style.css",
+    "./tokens.css": "./src/tokens.css",
+    "./theme.css": "./src/themes/default.css",
+    "./components.css": "./src/components.css",
+    "./themes/*.css": "./src/themes/*.css",
+    "./presets/*.css": "./src/presets/*.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "prepack": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "design-tokens",
+    "design-system",
+    "css-variables",
+    "paraxe",
+    "themes",
+    "presets"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.5.0"
+  }
+}

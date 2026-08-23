@@ -1,0 +1,58 @@
+/* ==========================================================================
+   @loba/design — presets/default.css
+   LAYER 3 — PERSONALITY (FROZEN v1.0)
+
+   Balanced, neutral baseline — Plus Jakarta Sans for display and body.
+   Only personality overrides (~15 vars). Structural defaults come from
+   tokens.css; colors come from themes/*.css.
+
+   ✅ font families, weight/density/radius/motion/shadow anchors,
+      component personality
+   ❌ the entire spacing scale, all font sizes, all radii, colors
+   ========================================================================== */
+
+/* ---- Font imports (personality-specific) ---- */
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  /* ---- Font Families ---- */
+  --font-family-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-family-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  --font-family-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* ---- Typography Personality ---- */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-size-base: 1rem;
+
+  /* ---- Spacing Density Anchor ---- */
+  --space-4: 1rem;
+
+  /* ---- Radius Anchor ---- */
+  --radius-md: 0.5rem;
+
+  /* ---- Motion Speed Anchor ---- */
+  --motion-duration-normal: 300ms;
+
+  /* ---- Motion Personality ---- */
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* ---- Shadow Softness Anchor ---- */
+  --shadow-elevation-low: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  /* ---- Glass Intensity ---- */
+  --glass-blur: 16px;
+
+  /* ---- Component Personality ---- */
+  --button-radius: var(--radius-full);
+  --button-padding-x: 1.5rem;
+  --button-padding-y: 0.75rem;
+  --card-radius: var(--radius-lg);
+  --nav-height: 4.5rem;
+}
+

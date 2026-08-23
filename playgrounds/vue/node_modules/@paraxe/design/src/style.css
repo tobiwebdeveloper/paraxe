@@ -1,0 +1,5 @@
+/* @paraxe/design/style.css */
+
+@import "./tokens.css";
+@import "./themes/default.css";
+@import "./components.css";

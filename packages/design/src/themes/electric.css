@@ -1,0 +1,45 @@
+/* ==========================================================================
+   @loba/design — themes/electric.css
+   Modern tech — Electric blue (#4040ed) on deep slate (#0f172a)
+   LAYER 2 — COLOR TOKENS (consumes tokens.css)
+   ========================================================================== */
+
+@import "./default.css";
+
+:root {
+  --brand-primary: #4040ed;
+  --brand-primary-hover: #3333cc;
+  --brand-primary-active: #2a2ab0;
+  --brand-primary-light: #7a7af3;
+  --brand-primary-muted: color-mix(in srgb, #4040ed 15%, transparent);
+  --brand-glow: color-mix(in srgb, #4040ed 25%, transparent);
+  --text-on-brand: #ffffff;
+
+  --background-primary: #0f172a;
+  --background-secondary: color-mix(in srgb, #0f172a 92%, white);
+
+  --surface-base: color-mix(in srgb, #0f172a 92%, white);
+  --surface-raised: color-mix(in srgb, #0f172a 84%, white);
+  --surface-card: color-mix(in srgb, #0f172a 88%, white);
+  --surface-hover: color-mix(in srgb, #0f172a 84%, white);
+
+  --text-primary: color-mix(in srgb, #0f172a 4%, white);
+  --text-secondary: color-mix(in srgb, #0f172a 40%, white);
+  --text-muted: color-mix(in srgb, #0f172a 60%, white);
+  --text-inverse: color-mix(in srgb, white 96%, black);
+}
+
+[data-theme="light"] {
+  --background-primary: #ffffff;
+  --background-secondary: color-mix(in srgb, #ffffff 95%, black);
+
+  --surface-base: color-mix(in srgb, #ffffff 93%, black);
+  --surface-raised: color-mix(in srgb, #ffffff 86%, black);
+  --surface-card: color-mix(in srgb, #ffffff 97%, black);
+  --surface-hover: color-mix(in srgb, #ffffff 90%, black);
+
+  --text-primary: color-mix(in srgb, black 92%, white);
+  --text-secondary: color-mix(in srgb, black 70%, white);
+  --text-muted: color-mix(in srgb, black 55%, white);
+  --text-inverse: color-mix(in srgb, white 96%, black);
+}

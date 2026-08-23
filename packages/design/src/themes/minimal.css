@@ -1,0 +1,50 @@
+/* ==========================================================================
+   @loba/design — themes/minimal.css
+   Minimal — Neutral slate brand (#64748b) on pure white (#ffffff)
+   LAYER 2 — COLOR TOKENS (consumes tokens.css)
+   ========================================================================== */
+
+@import "./default.css";
+
+:root {
+  --brand-primary: #64748b;
+  --brand-primary-hover: #475569;
+  --brand-primary-active: #334155;
+  --brand-primary-light: #94a3b8;
+  --brand-primary-muted: color-mix(in srgb, #64748b 15%, transparent);
+  --brand-glow: color-mix(in srgb, #64748b 25%, transparent);
+  --text-on-brand: #ffffff;
+
+  --background-primary: #ffffff;
+  --background-secondary: color-mix(in srgb, #ffffff 95%, black);
+
+  --surface-base: color-mix(in srgb, #ffffff 93%, black);
+  --surface-raised: color-mix(in srgb, #ffffff 86%, black);
+  --surface-card: color-mix(in srgb, #ffffff 97%, black);
+  --surface-hover: color-mix(in srgb, #ffffff 90%, black);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-default: color-mix(in srgb, #0f172a 12%, transparent);
+  --border-strong: color-mix(in srgb, #0f172a 20%, transparent);
+  --border-subtle: color-mix(in srgb, #0f172a 6%, transparent);
+  --border-focus: color-mix(in srgb, #64748b 45%, transparent);
+}
+
+[data-theme="light"] {
+  --background-primary: #ffffff;
+  --background-secondary: color-mix(in srgb, #ffffff 95%, black);
+
+  --surface-base: color-mix(in srgb, #ffffff 93%, black);
+  --surface-raised: color-mix(in srgb, #ffffff 86%, black);
+  --surface-card: color-mix(in srgb, #ffffff 97%, black);
+  --surface-hover: color-mix(in srgb, #ffffff 90%, black);
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+}

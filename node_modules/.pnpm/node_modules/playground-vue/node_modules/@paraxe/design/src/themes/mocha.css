@@ -1,0 +1,44 @@
+/* ==========================================================================
+   @loba/design — themes/mocha.css
+   Warm editorial — Muted navy (#3a405a) on soft cream (#f9dec9)
+   LAYER 2 — COLOR TOKENS (consumes tokens.css)
+   ========================================================================== */
+
+@import "./default.css";
+
+:root {
+  --brand-primary: #3a405a;
+  --brand-primary-hover: #2d3349;
+  --brand-primary-active: #222738;
+  --brand-primary-light: #6b7291;
+  --brand-primary-muted: color-mix(in srgb, #3a405a 15%, transparent);
+  --brand-glow: color-mix(in srgb, #3a405a 25%, transparent);
+
+  --background-primary: #f9dec9;
+  --background-secondary: color-mix(in srgb, #f9dec9 92%, black);
+
+  --surface-base: color-mix(in srgb, #f9dec9 93%, black);
+  --surface-raised: color-mix(in srgb, #f9dec9 86%, black);
+  --surface-card: color-mix(in srgb, #f9dec9 97%, black);
+  --surface-hover: color-mix(in srgb, #f9dec9 90%, black);
+
+  --text-primary: color-mix(in srgb, black 92%, #f9dec9);
+  --text-secondary: color-mix(in srgb, black 70%, #f9dec9);
+  --text-muted: color-mix(in srgb, black 55%, #f9dec9);
+  --text-inverse: color-mix(in srgb, white 96%, #f9dec9);
+}
+
+[data-theme="light"] {
+  --background-primary: #f9dec9;
+  --background-secondary: color-mix(in srgb, #f9dec9 92%, black);
+
+  --surface-base: color-mix(in srgb, #f9dec9 93%, black);
+  --surface-raised: color-mix(in srgb, #f9dec9 86%, black);
+  --surface-card: color-mix(in srgb, #f9dec9 97%, black);
+  --surface-hover: color-mix(in srgb, #f9dec9 90%, black);
+
+  --text-primary: color-mix(in srgb, black 92%, #f9dec9);
+  --text-secondary: color-mix(in srgb, black 70%, #f9dec9);
+  --text-muted: color-mix(in srgb, black 55%, #f9dec9);
+  --text-inverse: color-mix(in srgb, white 96%, #f9dec9);
+}

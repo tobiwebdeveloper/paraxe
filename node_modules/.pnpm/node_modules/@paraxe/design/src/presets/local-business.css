@@ -1,0 +1,32 @@
+/* ==========================================================================
+   @loba/design — presets/local-business.css
+   LAYER 3 — PERSONALITY: Warm, approachable, community-rooted
+   Rubik display + Nunito Sans body
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap");
+
+:root {
+  --font-family-display: "Rubik", ui-sans-serif, system-ui, sans-serif;
+  --font-family-body: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-size-base: 1rem;
+  --space-4: 1rem;
+  --radius-md: 0.75rem;
+  --motion-duration-normal: 300ms;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --shadow-elevation-low: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --glass-blur: 16px;
+  --button-radius: var(--radius-full);
+  --button-padding-x: 1.5rem;
+  --button-padding-y: 0.75rem;
+  --card-radius: var(--radius-xl);
+  --nav-height: 4.5rem;
+}

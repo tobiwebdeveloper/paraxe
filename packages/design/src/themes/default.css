@@ -1,0 +1,471 @@
+/* ==========================================================================
+   @loba/design — themes/default.css
+   LAYER 2 — COLOR TOKENS (FROZEN v1.0)
+
+   Dark theme is the default → declared on :root.
+   Light mode lives in [data-theme="light"] and overrides colors only.
+
+   ✅ colors only: brand · semantic states · backgrounds · surfaces · text ·
+      borders · glass · overlays · focus · selection · component colors
+   ❌ spacing/typography/motion/radius/layout (→ tokens.css)
+   ========================================================================== */
+
+:root {
+  /* =====================================================
+     BRAND — single brand colour generates the family
+     ===================================================== */
+  --brand-primary: #6366f1;
+  --brand-primary-hover: #4f46e5;
+  --brand-primary-active: #4338ca;
+  --brand-primary-light: #a5b4fc;
+  --brand-primary-muted: color-mix(in srgb, var(--brand-primary) 15%, transparent);
+  --brand-glow: color-mix(in srgb, var(--brand-primary) 25%, transparent);
+  --text-on-brand: #ffffff;
+
+  /* =====================================================
+     SEMANTIC STATE COLOURS
+     ===================================================== */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+  /* =====================================================
+     BACKGROUNDS
+     ===================================================== */
+  --background-primary: #09090b;
+  --background-secondary: color-mix(in srgb, var(--background-primary) 92%, white);
+
+  /* =====================================================
+     SURFACES — layers built from background
+     ===================================================== */
+  --surface-base: color-mix(in srgb, var(--background-primary) 92%, white);
+  --surface-raised: color-mix(in srgb, var(--background-primary) 84%, white);
+  --surface-card: color-mix(in srgb, var(--background-primary) 88%, white);
+  --surface-hover: color-mix(in srgb, var(--background-primary) 84%, white);
+  --surface-elevated-1: color-mix(in srgb, var(--background-primary) 84%, white);
+  --surface-elevated-2: color-mix(in srgb, var(--background-primary) 76%, white);
+  --surface-elevated-3: color-mix(in srgb, var(--background-primary) 68%, white);
+  --surface-glass: color-mix(in srgb, white 6%, transparent);
+  --surface-glass-strong: color-mix(in srgb, white 10%, transparent);
+
+  /* =====================================================
+     TEXT
+     ===================================================== */
+  --text-primary: color-mix(in srgb, white 96%, transparent);
+  --text-secondary: color-mix(in srgb, white 72%, transparent);
+  --text-muted: color-mix(in srgb, white 54%, transparent);
+  --text-inverse: color-mix(in srgb, white 96%, black);
+
+  /* Compatibility aliases */
+  --text-accent: var(--brand-primary);
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-primary-hover);
+
+  /* =====================================================
+     BORDERS
+     ===================================================== */
+  --border-default: color-mix(in srgb, white 12%, transparent);
+  --border-strong: color-mix(in srgb, white 20%, transparent);
+  --border-subtle: color-mix(in srgb, white 6%, transparent);
+  --border-focus: color-mix(in srgb, var(--brand-primary) 45%, transparent);
+
+  /* =====================================================
+     GLASSMORPHISM (colour only — blur lives in tokens.css)
+     ===================================================== */
+  --glass-background: color-mix(in srgb, white 6%, transparent);
+  --glass-border: color-mix(in srgb, white 14%, transparent);
+
+  /* =====================================================
+     OVERLAYS
+     ===================================================== */
+  --overlay-scrim: color-mix(in srgb, black 60%, transparent);
+  --overlay-scrim-strong: color-mix(in srgb, black 75%, transparent);
+
+  /* =====================================================
+     FOCUS RING & SELECTION (colour only)
+     ===================================================== */
+  --focus-ring-color: var(--border-focus);
+  --selection-background: var(--brand-primary);
+  --selection-text: #ffffff;
+
+  /* =====================================================
+     BUTTONS — PRIMARY
+     ===================================================== */
+  --button-primary-bg: var(--brand-primary);
+  --button-primary-text: var(--text-on-brand);
+  --button-primary-border: transparent;
+  --button-primary-hover-bg: var(--brand-primary-hover);
+  --button-primary-hover-border: transparent;
+  --button-primary-active-bg: var(--brand-primary-active);
+  --button-primary-disabled-bg: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  --button-primary-disabled-text: color-mix(in srgb, var(--text-primary) 40%, transparent);
+
+  /* =====================================================
+     BUTTONS — SECONDARY
+     ===================================================== */
+  --button-secondary-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 10%);
+  --button-secondary-text: var(--text-primary);
+  --button-secondary-border: var(--border-default);
+  --button-secondary-hover-bg: color-mix(in srgb, var(--surface-raised), var(--text-primary) 14%);
+  --button-secondary-hover-border: var(--border-strong);
+  --button-secondary-active-bg: color-mix(in srgb, var(--surface-raised), var(--text-primary) 20%);
+  --button-secondary-disabled-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 2%);
+  --button-secondary-disabled-text: var(--text-muted);
+  --button-secondary-disabled-border: color-mix(in srgb, var(--border-default), transparent 30%);
+
+  /* =====================================================
+     BUTTONS — GHOST
+     ===================================================== */
+  --button-ghost-bg: transparent;
+  --button-ghost-text: var(--text-primary);
+  --button-ghost-border: transparent;
+  --button-ghost-hover-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 6%);
+  --button-ghost-hover-border: transparent;
+  --button-ghost-active-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 12%);
+  --button-ghost-disabled-text: var(--text-muted);
+
+  /* =====================================================
+     BUTTONS — OUTLINE
+     ===================================================== */
+  --button-outline-bg: transparent;
+  --button-outline-text: var(--text-primary);
+  --button-outline-border: var(--border-strong);
+  --button-outline-hover-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 6%);
+  --button-outline-hover-border: var(--border-focus);
+  --button-outline-active-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 12%);
+  --button-outline-disabled-text: var(--text-muted);
+  --button-outline-disabled-border: var(--border-default);
+
+  /* =====================================================
+     BUTTONS — destructive
+     ===================================================== */
+  --button-destructive-bg: color-mix(in srgb, var(--color-danger) 14%, transparent);
+  --button-destructive-text: color-mix(in srgb, var(--color-danger) 80%, white);
+  --button-destructive-border: color-mix(in srgb, var(--color-danger) 20%, transparent);
+  --button-destructive-hover-bg: color-mix(in srgb, var(--color-danger) 20%, transparent);
+  --button-destructive-hover-border: color-mix(in srgb, var(--color-danger) 28%, transparent);
+  --button-destructive-active-bg: color-mix(in srgb, var(--color-danger) 26%, transparent);
+  --button-destructive-disabled-bg: color-mix(in srgb, var(--color-danger) 6%, transparent);
+  --button-destructive-disabled-text: color-mix(in srgb, var(--color-danger) 40%, transparent);
+
+  /* =====================================================
+     CARDS
+     ===================================================== */
+  --card-background: var(--surface-card);
+  --card-background-hover: var(--surface-hover);
+  --card-gradient:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand-primary) 10%, transparent),
+      transparent 40%
+    );
+  --card-highlight:
+    inset 0 1px 0 0 color-mix(in srgb, white 10%, transparent);
+  --card-highlight-inset:
+    inset 0 1px 0 0 color-mix(in srgb, white 10%, transparent);
+  --card-border: var(--border-default);
+  --card-border-hover: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  --card-shadow: color-mix(in srgb, var(--brand-primary) 12%, rgba(0, 0, 0, 0.7));
+  --card-shadow-hover: color-mix(in srgb, var(--brand-primary) 18%, rgba(0, 0, 0, 0.8));
+
+  /* =====================================================
+     NAVIGATION
+     ===================================================== */
+  --nav-background: color-mix(in srgb, var(--background-primary) 80%, transparent);
+  --nav-border: var(--border-default);
+  --nav-link: var(--text-secondary);
+  --nav-link-hover: var(--text-primary);
+  --nav-link-active: var(--text-primary);
+  --nav-link-active-border: var(--brand-primary);
+  --nav-focus-ring: var(--border-focus);
+
+  /* =====================================================
+     FORMS
+     ===================================================== */
+  --form-background: color-mix(in srgb, var(--surface-base), var(--text-primary) 3%);
+  --form-border: var(--border-default);
+  --form-border-hover: var(--border-strong);
+  --form-border-focus: var(--border-focus);
+  --form-border-error: var(--color-danger);
+  --form-border-success: var(--color-success);
+  --form-text: var(--text-primary);
+  --form-text-muted: var(--text-muted);
+  --form-text-error: var(--color-danger);
+  --form-text-success: var(--color-success);
+  --form-placeholder: var(--text-muted);
+  --form-bg-disabled: color-mix(in srgb, var(--surface-base), var(--text-primary) 2%);
+  --form-border-disabled: color-mix(in srgb, var(--border-default), transparent 30%);
+  --form-text-disabled: var(--text-muted);
+/* =====================================================
+   ALERTS
+   ===================================================== */
+
+--alert-info-background: color-mix(
+  in srgb,
+  var(--color-info) 10%,
+  transparent
+);
+
+--alert-info-border: color-mix(
+  in srgb,
+  var(--color-info) 28%,
+  transparent
+);
+
+--alert-info-text: var(--color-info);
+
+
+--alert-success-background: color-mix(
+  in srgb,
+  var(--color-success) 10%,
+  transparent
+);
+
+--alert-success-border: color-mix(
+  in srgb,
+  var(--color-success) 28%,
+  transparent
+);
+
+--alert-success-text: var(--color-success);
+
+
+--alert-warning-background: color-mix(
+  in srgb,
+  var(--color-warning) 10%,
+  transparent
+);
+
+--alert-warning-border: color-mix(
+  in srgb,
+  var(--color-warning) 28%,
+  transparent
+);
+
+--alert-warning-text: var(--color-warning);
+
+
+--alert-danger-background: color-mix(
+  in srgb,
+  var(--color-danger) 10%,
+  transparent
+);
+
+--alert-danger-border: color-mix(
+  in srgb,
+  var(--color-danger) 28%,
+  transparent
+);
+
+--alert-danger-text: var(--color-danger);
+/* =====================================================
+   BADGES
+   ===================================================== */
+
+--badge-background: color-mix(
+  in srgb,
+  var(--surface-raised),
+  var(--text-primary) 8%
+);
+--badge-border: var(--border-default);
+--badge-text: var(--text-secondary);
+
+
+/* =====================================================
+   BADGES
+   ===================================================== */
+
+--badge-background: color-mix(
+  in srgb,
+  var(--surface-raised),
+  var(--text-primary) 8%
+);
+
+--badge-border: var(--border-default);
+--badge-text: var(--text-secondary);
+
+
+/* -----------------------------------------------------
+   BADGE VARIANTS
+   ----------------------------------------------------- */
+
+--badge-default-background: color-mix(
+  in srgb,
+  var(--surface-raised),
+  var(--text-primary) 8%
+);
+--badge-default-border: var(--border-default);
+--badge-default-text: var(--text-secondary);
+
+--badge-success-background: color-mix(
+  in srgb,
+  var(--color-success) 10%,
+  transparent
+);
+--badge-success-border: color-mix(
+  in srgb,
+  var(--color-success) 28%,
+  transparent
+);
+--badge-success-text: var(--color-success);
+
+--badge-warning-background: color-mix(
+  in srgb,
+  var(--color-warning) 10%,
+  transparent
+);
+--badge-warning-border: color-mix(
+  in srgb,
+  var(--color-warning) 28%,
+  transparent
+);
+--badge-warning-text: var(--color-warning);
+
+--badge-danger-background: color-mix(
+  in srgb,
+  var(--color-danger) 10%,
+  transparent
+);
+--badge-danger-border: color-mix(
+  in srgb,
+  var(--color-danger) 28%,
+  transparent
+);
+--badge-danger-text: var(--color-danger);
+
+--badge-info-background: color-mix(
+  in srgb,
+  var(--color-info) 10%,
+  transparent
+);
+--badge-info-border: color-mix(
+  in srgb,
+  var(--color-info) 28%,
+  transparent
+);
+--badge-info-text: var(--color-info);
+
+--badge-brand-background: color-mix(
+  in srgb,
+  var(--brand-primary) 10%,
+  transparent
+);
+--badge-brand-border: color-mix(
+  in srgb,
+  var(--brand-primary) 28%,
+  transparent
+);
+--badge-brand-text: var(--brand-primary);
+  /* =====================================================
+   TAGS
+   ===================================================== */
+
+--tag-background: var(--surface-raised);
+--tag-border: var(--border-subtle);
+--tag-text: var(--text-muted);
+
+  /* =====================================================
+     FOOTER
+     ===================================================== */
+  --footer-background: color-mix(in srgb, var(--surface-base), var(--text-primary) 3%);
+  --footer-border: var(--border-default);
+  --footer-text: var(--text-muted);
+  --footer-link: var(--text-secondary);
+  --footer-link-hover: var(--text-primary);
+
+  /* =====================================================
+     SHADOWS — component elevation
+     ===================================================== */
+  --shadow-elevation-low: 0 2px 8px color-mix(in srgb, var(--brand-primary) 10%, rgba(0, 0, 0, 0.6));
+  --shadow-elevation-medium: 0 4px 24px color-mix(in srgb, var(--brand-primary) 14%, rgba(0, 0, 0, 0.7));
+  --shadow-elevation-high: 0 8px 40px color-mix(in srgb, var(--brand-primary) 18%, rgba(0, 0, 0, 0.8));
+  --shadow-elevation-modal: 0 20px 60px color-mix(in srgb, var(--brand-primary) 22%, rgba(0, 0, 0, 0.9));
+}
+
+/* ==========================================================================
+   THEME: LIGHT MODE — colors only, overrides
+   ========================================================================== */
+[data-theme="light"] {
+  --brand-primary: #6366f1;
+  --brand-primary-hover: #4f46e5;
+  --brand-primary-active: #4338ca;
+  --brand-primary-light: #c7d2fe;
+  --brand-primary-muted: color-mix(in srgb, var(--brand-primary) 12%, transparent);
+  --brand-glow: color-mix(in srgb, var(--brand-primary) 18%, transparent);
+  --text-on-brand: #ffffff;
+
+  --background-primary: #ffffff;
+  --background-secondary: color-mix(in srgb, var(--background-primary) 95%, black);
+
+  --surface-base: color-mix(in srgb, var(--background-primary) 93%, black);
+  --surface-raised: color-mix(in srgb, var(--background-primary) 86%, black);
+  --surface-card: color-mix(in srgb, var(--background-primary) 97%, black);
+  --surface-hover: color-mix(in srgb, var(--background-primary) 90%, black);
+  --surface-elevated-1: color-mix(in srgb, var(--background-primary) 86%, black);
+  --surface-elevated-2: color-mix(in srgb, var(--background-primary) 78%, black);
+  --surface-elevated-3: color-mix(in srgb, var(--background-primary) 70%, black);
+  --surface-glass: color-mix(in srgb, white 60%, transparent);
+  --surface-glass-strong: color-mix(in srgb, white 75%, transparent);
+
+  --text-primary: color-mix(in srgb, black 92%, white);
+  --text-secondary: color-mix(in srgb, black 70%, white);
+  --text-muted: color-mix(in srgb, black 55%, white);
+  --text-inverse: color-mix(in srgb, white 96%, black);
+
+  --text-accent: var(--brand-primary);
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-primary-hover);
+
+  --border-default: color-mix(in srgb, var(--text-primary) 12%, transparent);
+  --border-strong: color-mix(in srgb, var(--text-primary) 20%, transparent);
+  --border-subtle: color-mix(in srgb, var(--text-primary) 6%, transparent);
+  --border-focus: color-mix(in srgb, var(--brand-primary) 40%, transparent);
+
+  --glass-background: color-mix(in srgb, white 60%, transparent);
+  --glass-border: color-mix(in srgb, black 12%, transparent);
+
+  --overlay-scrim: color-mix(in srgb, black 40%, transparent);
+  --overlay-scrim-strong: color-mix(in srgb, black 60%, transparent);
+
+  --focus-ring-color: var(--border-focus);
+  --selection-background: var(--brand-primary);
+  --selection-text: #ffffff;
+
+  --nav-background: color-mix(in srgb, var(--background-primary) 80%, transparent);
+
+  --button-secondary-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 5%);
+  --button-secondary-hover-bg: color-mix(in srgb, var(--surface-raised), var(--text-primary) 8%);
+  --button-secondary-active-bg: color-mix(in srgb, var(--surface-raised), var(--text-primary) 12%);
+  --button-ghost-hover-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 5%);
+  --button-ghost-active-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 10%);
+  --button-outline-hover-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 5%);
+  --button-outline-active-bg: color-mix(in srgb, var(--surface-base), var(--text-primary) 10%);
+
+  --button-destructive-bg: color-mix(in srgb, var(--color-danger) 10%, transparent);
+  --button-destructive-text: var(--color-danger);
+  --button-destructive-border: color-mix(in srgb, var(--color-danger) 18%, transparent);
+
+--card-gradient:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--brand-primary) 7%, transparent),
+      transparent 40%
+    );
+  --card-highlight:
+    inset 0 1px 0 0 color-mix(in srgb, white 24%, transparent);
+  --card-highlight-inset:
+    inset 0 1px 0 0 color-mix(in srgb, white 24%, transparent);
+  --card-border-hover: color-mix(in srgb, var(--brand-primary) 24%, transparent);
+  --card-shadow: color-mix(in srgb, var(--brand-primary) 8%, rgba(0, 0, 0, 0.5));
+  --card-shadow-hover: color-mix(in srgb, var(--brand-primary) 12%, rgba(0, 0, 0, 0.6));
+
+  --form-background: color-mix(in srgb, var(--surface-base), var(--text-primary) 2%);
+  --badge-background: color-mix(in srgb, var(--surface-raised), var(--text-primary) 5%);
+
+  --shadow-elevation-low: 0 2px 8px color-mix(in srgb, var(--brand-primary) 6%, rgba(0, 0, 0, 0.4));
+  --shadow-elevation-medium: 0 4px 24px color-mix(in srgb, var(--brand-primary) 8%, rgba(0, 0, 0, 0.5));
+  --shadow-elevation-high: 0 8px 40px color-mix(in srgb, var(--brand-primary) 12%, rgba(0, 0, 0, 0.6));
+  --shadow-elevation-modal: 0 20px 60px color-mix(in srgb, var(--brand-primary) 16%, rgba(0, 0, 0, 0.7));
+}
+

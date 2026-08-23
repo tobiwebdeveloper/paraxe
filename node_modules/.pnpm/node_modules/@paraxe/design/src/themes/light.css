@@ -1,0 +1,34 @@
+/* ==========================================================================
+   @loba/design — themes/light.css
+   Clean light — Blue brand (#2563eb) on soft grey-white (#f8fafc)
+   LAYER 2 — COLOR TOKENS (consumes tokens.css)
+
+   For a light-default project, set `data-theme="light"` on <html> or import
+   this file's :root block. The [data-theme="light"] block in default.css
+   handles runtime theme toggling.
+   ========================================================================== */
+
+@import "./default.css";
+
+:root {
+  --brand-primary: #2563eb;
+  --brand-primary-hover: #1d4ed8;
+  --brand-primary-active: #1e40af;
+  --brand-primary-light: #bfdbfe;
+  --brand-primary-muted: color-mix(in srgb, #2563eb 12%, transparent);
+  --brand-glow: color-mix(in srgb, #2563eb 18%, transparent);
+
+  --background-primary: #f8fafc;
+  --background-secondary: #f1f5f9;
+
+  --surface-base: #f1f5f9;
+  --surface-raised: #e2e8f0;
+  --surface-card: #ffffff;
+  --surface-hover: #e8edf3;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #f8fafc;
+}
+
