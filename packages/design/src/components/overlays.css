@@ -1,0 +1,590 @@
+/* --------------------------------------------------------------------------
+OVERLAYS
+*---------------------------------------------------------------------------- */
+/* ==========================================================================
+   DIALOG
+   Focused task / decision overlay.
+   ========================================================================== */
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-6);
+
+  pointer-events: none;
+}
+
+.dialog-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: var(--overlay-scrim);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  opacity: 0;
+
+  transition:
+    opacity var(--motion-duration-normal)
+    var(--motion-ease-out);
+}
+
+.dialog--open {
+  pointer-events: auto;
+}
+
+.dialog--open .dialog-backdrop {
+  opacity: 1;
+}
+
+.dialog-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(
+    100%,
+    var(--dialog-width, 32rem)
+  );
+
+  max-height: calc(100vh - var(--space-12));
+
+  overflow-y: auto;
+
+  padding: var(--card-padding);
+
+  border:
+    1px solid
+    var(--card-border);
+
+  border-radius: var(--card-radius);
+
+  background: var(--card-background);
+  color: var(--text-primary);
+
+  box-shadow: var(--shadow-elevation-high);
+
+  opacity: 0;
+  transform: translateY(
+    var(--space-2)
+  ) scale(0.98);
+
+  transition:
+    opacity var(--motion-duration-normal)
+    var(--motion-ease-out),
+    transform var(--motion-duration-normal)
+    var(--motion-ease-out);
+}
+
+.dialog--open .dialog-content {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+/* ==========================================================================
+   DIALOG CLOSE
+   ========================================================================== */
+
+.dialog-close {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--button-min-height);
+  height: var(--button-min-height);
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--motion-duration-fast)
+      var(--motion-ease-out),
+    color var(--motion-duration-fast)
+      var(--motion-ease-out);
+}
+
+.dialog-close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.dialog-close:focus-visible {
+  outline:
+    var(--focus-ring-width)
+    solid
+    var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+
+/* ==========================================================================
+   DIALOG RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+  .dialog {
+    align-items: flex-end;
+
+    padding:
+      var(--space-3);
+  }
+
+  .dialog-content {
+    width: 100%;
+    max-height: calc(100vh - var(--space-6));
+
+    border-radius:
+      var(--card-radius)
+      var(--card-radius)
+      0
+      0;
+
+    transform: translateY(
+      var(--space-4)
+    );
+  }
+
+  .dialog--open .dialog-content {
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .dialog-backdrop,
+  .dialog-content {
+    transition: none;
+  }
+}
+/* ==========================================================================
+   DRAWER
+   Large contextual workspace overlay.
+   ========================================================================== */
+
+.drawer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+
+  pointer-events: none;
+}
+
+.drawer--open {
+  pointer-events: auto;
+}
+
+
+/* ==========================================================================
+   BACKDROP
+   ========================================================================== */
+
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+
+  border: 0;
+  padding: 0;
+
+   background: var(--overlay-scrim);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  opacity: 0;
+
+  cursor: default;
+
+  transition:
+    opacity var(--motion-duration-normal)
+    var(--motion-ease-out);
+}
+
+.drawer--open .drawer-backdrop {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   PANEL
+   ========================================================================== */
+
+.drawer-panel {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  width: min(
+    var(--drawer-width, 28rem),
+    100vw
+  );
+
+  background: var(--card-background);
+  color: var(--text-primary);
+
+  border-color: var(--border-subtle);
+  border-style: solid;
+
+  box-shadow: var(--shadow-elevation-high);
+
+  overflow: hidden;
+
+  transition:
+    transform var(--motion-duration-normal)
+    var(--motion-ease-out);
+}
+
+
+/* ==========================================================================
+   SIDES
+   ========================================================================== */
+
+.drawer--right .drawer-panel {
+  right: 0;
+
+  border-left-width: 1px;
+
+  transform: translateX(100%);
+}
+
+.drawer--left .drawer-panel {
+  left: 0;
+
+  border-right-width: 1px;
+
+  transform: translateX(-100%);
+}
+
+.drawer--open .drawer-panel {
+  transform: translateX(0);
+}
+
+
+/* ==========================================================================
+   CONTENT
+   ========================================================================== */
+
+.drawer-content {
+  flex: 1 1 auto;
+  min-height: 0;
+
+  padding: var(--card-padding);
+
+  overflow-y: auto;
+}
+
+
+/* ==========================================================================
+   CLOSE
+   ========================================================================== */
+
+.drawer-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--button-min-height);
+  height: var(--button-min-height);
+
+  flex: 0 0 auto;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--motion-duration-fast)
+      var(--motion-ease-out),
+    color var(--motion-duration-fast)
+      var(--motion-ease-out);
+}
+
+.drawer-close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.drawer-close:focus-visible {
+  outline:
+    var(--focus-ring-width)
+    solid
+    var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
+
+@media (max-width: 40rem) {
+  .drawer-panel {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .drawer-backdrop,
+  .drawer-panel {
+    transition: none;
+  }
+}
+/* ==========================================================================
+   POPOVER
+   Contextual interactive content
+   ========================================================================== */
+
+.popover {
+  position: relative;
+  display: inline-block;
+}
+
+.popover-trigger {
+  display: inline-flex;
+}
+
+.popover-content {
+  position: absolute;
+  z-index: var(--z-popover);
+
+  width: max-content;
+  max-width: min(
+    22rem,
+    calc(100vw - var(--space-8))
+  );
+
+  padding: var(--space-4);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+
+  background: var(--surface-card);
+  color: var(--text-primary);
+
+  box-shadow: var(--shadow-elevation-medium);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.25rem) scale(0.98);
+
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-fast) var(--motion-ease-out),
+    visibility var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.popover--open .popover-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.popover--bottom .popover-content {
+  top: calc(100% + var(--space-2));
+  left: 0;
+}
+
+.popover--top .popover-content {
+  bottom: calc(100% + var(--space-2));
+  left: 0;
+
+  transform: translateY(0.25rem) scale(0.98);
+}
+
+.popover--top.popover--open .popover-content {
+  transform: translateY(0) scale(1);
+}
+
+.popover--right .popover-content {
+  top: 0;
+  left: calc(100% + var(--space-2));
+}
+
+.popover--left .popover-content {
+  top: 0;
+  right: calc(100% + var(--space-2));
+}
+
+
+/* ==========================================================================
+   TOOLTIP
+   ========================================================================== */
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.tooltip-trigger {
+  display: inline-flex;
+}
+
+.tooltip-content {
+  position: absolute;
+  z-index: var(--z-tooltip);
+
+  width: max-content;
+  max-width: 18rem;
+
+  padding:
+    var(--space-2)
+    var(--space-3);
+
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+
+  background: var(--surface-elevated-2);
+  color: var(--text-primary);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+
+  box-shadow: var(--shadow-elevation-low);
+
+  white-space: normal;
+  text-align: left;
+
+  pointer-events: none;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.2rem);
+
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-fast) var(--motion-ease-out),
+    visibility var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.tooltip--visible .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.tooltip--bottom .tooltip-content {
+  top: calc(100% + var(--space-2));
+  left: 50%;
+
+  transform: translate(-50%, -0.2rem);
+}
+
+.tooltip--bottom.tooltip--visible .tooltip-content {
+  transform: translate(-50%, 0);
+}
+
+.tooltip--top .tooltip-content {
+  bottom: calc(100% + var(--space-2));
+  left: 50%;
+
+  transform: translate(-50%, 0.2rem);
+}
+
+.tooltip--top.tooltip--visible .tooltip-content {
+  transform: translate(-50%, 0);
+}
+
+.tooltip--right .tooltip-content {
+  top: 50%;
+  left: calc(100% + var(--space-2));
+
+  transform: translate(0.2rem, -50%);
+}
+
+.tooltip--right.tooltip--visible .tooltip-content {
+  transform: translate(0, -50%);
+}
+
+.tooltip--left .tooltip-content {
+  top: 50%;
+  right: calc(100% + var(--space-2));
+
+  transform: translate(-0.2rem, -50%);
+}
+
+.tooltip--left.tooltip--visible .tooltip-content {
+  transform: translate(0, -50%);
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .popover-content,
+  .tooltip-content {
+    transition: none;
+  }
+}
+/* ==========================================================================
+   ALERT
+   Persistent in-flow feedback message.
+   ========================================================================== */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  width: 100%;
+
+  padding: v;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.alert-message {
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.alert-actions {
+  display: inline-flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  margin-top: var(--space-3);
+}

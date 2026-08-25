@@ -2,7 +2,7 @@
 import { computed } from "vue";
 
 interface Props {
-  value?: string;
+  modelValue?: string;
   disabled?: boolean;
   readonly?: boolean;
   error?: boolean;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  value: "",
+  modelValue: "",
   disabled: false,
   readonly: false,
   error: false,
@@ -20,8 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const emit = defineEmits<{
-  input: [value: string];
-  change: [value: string];
+  "update:modelValue": [value: string];
 }>();
 
 const textareaClasses = computed(() => ({
@@ -29,14 +28,9 @@ const textareaClasses = computed(() => ({
   "input-success": props.success,
 }));
 
-function handleInput(event: Event) {
+function handleInput(event: Event): void {
   const target = event.target as HTMLTextAreaElement;
-  emit("input", target.value);
-}
-
-function handleChange(event: Event) {
-  const target = event.target as HTMLTextAreaElement;
-  emit("change", target.value);
+  emit("update:modelValue", target.value);
 }
 </script>
 
@@ -44,11 +38,10 @@ function handleChange(event: Event) {
   <textarea
     class="textarea"
     :class="textareaClasses"
-    :value="props.value"
+    :value="props.modelValue"
     :disabled="props.disabled"
     :readonly="props.readonly"
     :maxlength="props.maxlength"
     @input="handleInput"
-    @change="handleChange"
   />
 </template>

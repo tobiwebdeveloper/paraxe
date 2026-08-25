@@ -2,27 +2,32 @@
 import { computed } from "vue";
 
 interface Props {
-  value?: boolean;
+  modelValue?: boolean;
   disabled?: boolean;
   name?: string;
   required?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  value: false,
+  modelValue: false,
   disabled: false,
   required: false,
 });
 
 const emit = defineEmits<{
-  change: [value: boolean];
+  "update:modelValue": [value: boolean];
 }>();
 
 const checkboxClasses = computed(() => ({
   checkbox: true,
-  "checkbox--checked": props.value,
+  "checkbox--checked": props.modelValue,
   "checkbox--disabled": props.disabled,
 }));
+
+function handleChange(event: Event): void {
+  const target = event.target as HTMLInputElement;
+  emit("update:modelValue", target.checked);
+}
 </script>
 
 <template>
@@ -31,15 +36,10 @@ const checkboxClasses = computed(() => ({
       class="checkbox-input"
       type="checkbox"
       :name="props.name"
-      :checked="props.value"
+      :checked="props.modelValue"
       :disabled="props.disabled"
       :required="props.required"
-      @change="
-        emit(
-          'change',
-          ($event.target as HTMLInputElement).checked,
-        )
-      "
+      @change="handleChange"
     />
 
     <span
