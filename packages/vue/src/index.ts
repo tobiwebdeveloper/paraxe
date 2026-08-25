@@ -12,7 +12,7 @@ export { default as SectionHeader } from "./composites/SectionHeader.vue"
 export { default as ButtonGroup } from "./composites/ButtonGroup.vue";
 export { default as Divider } from "./primitives/Divider.vue";
 export { default as Label } from "./typography/Label.vue";
-export { default as Image } from "./elements/Image.vue";
+export { default as Image } from "./media/Image.vue";
 export { default as FormField } from "./forms/FormField.vue";
 export { default as Textarea } from "./forms/Textarea.vue";
 export { default as Select } from "./forms/Select.vue";

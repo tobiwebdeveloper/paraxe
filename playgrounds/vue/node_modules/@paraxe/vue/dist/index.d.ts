@@ -12,7 +12,7 @@ export { default as SectionHeader } from './composites/SectionHeader';
 export { default as ButtonGroup } from './composites/ButtonGroup';
 export { default as Divider } from './primitives/Divider';
 export { default as Label } from './typography/Label';
-export { default as Image } from './elements/Image';
+export { default as Image } from './media/Image';
 export { default as FormField } from './forms/FormField';
 export { default as Textarea } from './forms/Textarea';
 export { default as Select } from './forms/Select';
