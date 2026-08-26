@@ -4,13 +4,7 @@ import {
   ref,
   useSlots,
 } from "vue";
-
-export interface SidebarItemProps {
-  active?: boolean;
-  disabled?: boolean;
-  href?: string;
-  expanded?: boolean;
-}
+import type { SidebarItemProps } from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<SidebarItemProps>(),
@@ -58,7 +52,6 @@ function handleClick(event: MouseEvent) {
   }
 }
 </script>
-
 <template>
   <div class="sidebar-item-wrapper">
     <component

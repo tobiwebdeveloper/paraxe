@@ -1,15 +1,9 @@
 <script setup lang="ts">
-import {
-  computed,
-  inject,
-} from "vue";
-
-import type {
-  BreadcrumbsProps,
-} from "@paraxe/core";
+import { computed, inject } from "vue";
+import type { BreadcrumbProps } from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<BreadcrumbsProps>(),
+  defineProps<BreadcrumbProps>(),
   {
     href: undefined,
     current: false,

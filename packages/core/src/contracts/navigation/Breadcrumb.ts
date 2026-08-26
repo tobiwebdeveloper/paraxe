@@ -1,4 +1,4 @@
-export interface BreadcrumbsProps {
+export interface BreadcrumbProps {
   href?: string;
   current?: boolean;
 }

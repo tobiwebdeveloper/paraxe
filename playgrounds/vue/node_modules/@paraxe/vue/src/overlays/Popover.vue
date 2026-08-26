@@ -4,13 +4,12 @@ import {
   onMounted,
   ref,
 } from "vue";
-
-interface Props {
-  placement?: "top" | "bottom" | "left" | "right";
-}
+import type {
+  PopoverProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<PopoverProps>(),
   {
     placement: "bottom",
   },
@@ -18,7 +17,8 @@ const props = withDefaults(
 
 const open = ref(false);
 
-const popover = ref<HTMLElement | null>(null);
+const popover =
+  ref<HTMLElement | null>(null);
 
 function toggle() {
   open.value = !open.value;

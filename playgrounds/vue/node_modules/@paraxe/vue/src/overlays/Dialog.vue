@@ -6,15 +6,12 @@ import {
   ref,
   watch,
 } from "vue";
-
-interface Props {
-  modelValue?: boolean;
-  closeOnBackdrop?: boolean;
-  closeOnEscape?: boolean;
-}
+import type {
+  DialogProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<DialogProps>(),
   {
     modelValue: false,
     closeOnBackdrop: true,
@@ -45,7 +42,10 @@ const focusableSelector = [
 ].join(", ");
 
 function close() {
-  emit("update:modelValue", false);
+  emit(
+    "update:modelValue",
+    false,
+  );
 }
 
 function handleBackdropClick() {

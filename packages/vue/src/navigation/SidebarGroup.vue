@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-
-export interface SidebarGroupProps {
-  label?: string;
-}
+import type { SidebarGroupProps } from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<SidebarGroupProps>(),
@@ -14,7 +11,9 @@ const props = withDefaults(
 
 const groupClasses = computed(() => ({
   "sidebar-group": true,
-  "sidebar-group--labeled": Boolean(props.label),
+  "sidebar-group--labeled": Boolean(
+    props.label,
+  ),
 }));
 </script>
 

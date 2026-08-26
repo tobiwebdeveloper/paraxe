@@ -4,18 +4,23 @@ import {
   ref,
   watch,
 } from "vue";
-
-interface Props {
-  modelValue?: string | number | null;
-}
+import type {
+  TabsProps,
+} from "@paraxe/core";
 
 interface TabsContext {
-  activeValue: () => string | number | null;
-  selectTab: (value: string | number) => void;
+  activeValue: () =>
+    | string
+    | number
+    | null;
+
+  selectTab: (
+    value: string | number,
+  ) => void;
 }
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<TabsProps>(),
   {
     modelValue: null,
   },
@@ -38,7 +43,9 @@ watch(
   },
 );
 
-function selectTab(value: string | number) {
+function selectTab(
+  value: string | number,
+) {
   activeValue.value = value;
 
   emit(
@@ -50,7 +57,8 @@ function selectTab(value: string | number) {
 provide<TabsContext>(
   "loba-tabs",
   {
-    activeValue: () => activeValue.value,
+    activeValue: () =>
+      activeValue.value,
     selectTab,
   },
 );

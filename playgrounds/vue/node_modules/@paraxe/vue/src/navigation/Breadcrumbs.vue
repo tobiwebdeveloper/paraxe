@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { provide } from "vue";
-
-interface Props {
-  separator?: string;
-}
+import type { BreadcrumbsProps } from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<BreadcrumbsProps>(),
   {
     separator: "/",
   },

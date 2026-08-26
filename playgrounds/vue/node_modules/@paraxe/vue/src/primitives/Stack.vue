@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import type { StackProps } from "@paraxe/core";
 
-type StackSize = "small" | "medium" | "large";
-
-interface Props {
-  size?: StackSize;
-  fullWidth?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  size: "medium",
-  fullWidth: false,
-});
+const props = withDefaults(
+  defineProps<StackProps>(),
+  {
+    size: "medium",
+    fullWidth: false,
+  },
+);
 
 const stackClasses = computed(() => ({
   stack: props.size === "medium",
@@ -26,3 +23,4 @@ const stackClasses = computed(() => ({
     <slot />
   </div>
 </template>
+

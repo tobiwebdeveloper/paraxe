@@ -3,14 +3,10 @@ import {
   computed,
   inject,
 } from "vue";
-
-interface Props {
-  value: string | number;
-  disabled?: boolean;
-}
+import type { TabProps } from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<TabProps>(),
   {
     disabled: false,
   },
@@ -21,7 +17,6 @@ interface TabsContext {
     | string
     | number
     | null;
-
   selectTab: (
     value: string | number,
   ) => void;

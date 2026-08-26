@@ -3,15 +3,12 @@ import {
   onBeforeUnmount,
   ref,
 } from "vue";
-
-interface Props {
-  placement?: "top" | "bottom" | "left" | "right";
-  text: string;
-  delay?: number;
-}
+import type {
+  TooltipProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<TooltipProps>(),
   {
     placement: "top",
     delay: 300,
@@ -20,9 +17,9 @@ const props = withDefaults(
 
 const visible = ref(false);
 
-let timer: ReturnType<
-  typeof setTimeout
-> | undefined;
+let timer:
+  | ReturnType<typeof setTimeout>
+  | undefined;
 
 function show() {
   clearTimeout(timer);

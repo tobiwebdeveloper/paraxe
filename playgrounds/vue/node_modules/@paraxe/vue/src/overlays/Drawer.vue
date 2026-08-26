@@ -6,16 +6,10 @@ import {
   ref,
   watch,
 } from "vue";
-
-interface Props {
-  modelValue?: boolean;
-  side?: "left" | "right";
-  closeOnBackdrop?: boolean;
-  closeOnEscape?: boolean;
-}
+import type { DrawerProps } from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<DrawerProps>(),
   {
     modelValue: false,
     side: "right",
@@ -30,7 +24,8 @@ const emit = defineEmits<{
   ];
 }>();
 
-const panel = ref<HTMLElement | null>(null);
+const panel =
+  ref<HTMLElement | null>(null);
 
 let previouslyFocused:
   | HTMLElement
@@ -46,7 +41,10 @@ const focusableSelector = [
 ].join(", ");
 
 function close() {
-  emit("update:modelValue", false);
+  emit(
+    "update:modelValue",
+    false,
+  );
 }
 
 function handleBackdropClick() {
@@ -78,11 +76,12 @@ function handleKeydown(
     return;
   }
 
-  const focusable = Array.from(
-    panel.value.querySelectorAll<HTMLElement>(
-      focusableSelector,
-    ),
-  );
+  const focusable =
+    Array.from(
+      panel.value.querySelectorAll<HTMLElement>(
+        focusableSelector,
+      ),
+    );
 
   if (focusable.length === 0) {
     event.preventDefault();
@@ -172,8 +171,10 @@ onBeforeUnmount(() => {
       class="drawer"
       :class="{
         'drawer--open': modelValue,
-        'drawer--left': side === 'left',
-        'drawer--right': side === 'right',
+        'drawer--left':
+          side === "left",
+        'drawer--right':
+          side === "right",
       }"
       role="presentation"
     >

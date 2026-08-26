@@ -1,9 +1,6 @@
 <script setup lang="ts">
 import { computed } from "vue";
-
-export interface SidebarProps {
-  collapsed?: boolean;
-}
+import type { SidebarProps } from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<SidebarProps>(),

@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import type { ContainerProps } from "@paraxe/core";
 
-type ContainerSize = "default" | "narrow";
-
-interface Props {
-  size?: ContainerSize;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  size: "default",
-});
+const props = withDefaults(
+  defineProps<ContainerProps>(),
+  {
+    size: "default",
+  },
+);
 
 const containerClasses = computed(() => ({
   container: props.size === "default",
