@@ -1,19 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-type AlertVariant =
-  | "info"
-  | "success"
-  | "warning"
-  | "danger";
-
-interface Props {
-  variant?: AlertVariant;
-  dismissible?: boolean;
-}
+import type {
+  AlertProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<AlertProps>(),
   {
     variant: "info",
     dismissible: false,

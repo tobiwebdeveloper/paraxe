@@ -4,10 +4,10 @@ import {
   inject,
 } from "vue";
 
-export interface ChoiceProps {
-  value: string | number;
-  disabled?: boolean;
-}
+import type {
+  ChoiceProps,
+  ChoiceGroupContext,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<ChoiceProps>(),
@@ -16,22 +16,10 @@ const props = withDefaults(
   },
 );
 
-interface ChoiceGroupContext {
-  multiple: boolean;
-  disabled: boolean;
-
-  isSelected: (
-    value: string | number,
-  ) => boolean;
-
-  toggleChoice: (
-    value: string | number,
-  ) => void;
-}
-
-const injectedGroup = inject<ChoiceGroupContext>(
-  "loba-choice-group",
-);
+const injectedGroup =
+  inject<ChoiceGroupContext>(
+    "loba-choice-group",
+  );
 
 if (!injectedGroup) {
   throw new Error(
@@ -40,7 +28,6 @@ if (!injectedGroup) {
 }
 
 const group = injectedGroup;
-
 
 const selected = computed(() =>
   group.isSelected(props.value),

@@ -1,19 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import type {
+  CardProps,
+} from "@paraxe/core";
 
-export type CardVariant =
-  | "default"
-  | "outlined"
-  | "elevated"
-  | "interactive"
-  | "selected";
 
-export interface Props {
-  variant?: CardVariant;
-  as?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<CardProps>(), {
   variant: "default",
   as: "div",
 });

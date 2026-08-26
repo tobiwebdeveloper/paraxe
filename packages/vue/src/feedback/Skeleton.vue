@@ -1,22 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-type SkeletonVariant =
-  | "text"
-  | "heading"
-  | "avatar"
-  | "circle"
-  | "button"
-  | "default";
-
-interface Props {
-  variant?: SkeletonVariant;
-  width?: string;
-  height?: string;
-}
+import type {
+  SkeletonProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<SkeletonProps>(),
   {
     variant: "default",
     width: undefined,

@@ -3,12 +3,9 @@ import { computed } from "vue";
 
 type ButtonGroupAlign = "start" | "center" | "end";
 
-interface Props {
-  align?: ButtonGroupAlign;
-  stack?: boolean;
-}
+import type { ButtonGroupProps } from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ButtonGroupProps>(), {
   align: "start",
   stack: false,
 });

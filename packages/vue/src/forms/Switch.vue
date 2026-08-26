@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export interface SwitchProps {
-  modelValue?: boolean;
-  disabled?: boolean;
-}
+import type {
+  SwitchProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<SwitchProps>(),
@@ -15,17 +14,24 @@ const props = withDefaults(
 );
 
 const emit = defineEmits<{
-  "update:modelValue": [value: boolean];
+  "update:modelValue": [
+    value: boolean,
+  ];
 }>();
 
 const classes = computed(() => ({
   switch: true,
-  "switch--checked": props.modelValue,
-  "switch--disabled": props.disabled,
+  "switch--checked":
+    props.modelValue,
+  "switch--disabled":
+    props.disabled,
 }));
 
-function handleChange(event: Event) {
-  const input = event.target as HTMLInputElement;
+function handleChange(
+  event: Event,
+) {
+  const input =
+    event.target as HTMLInputElement;
 
   emit(
     "update:modelValue",
@@ -33,7 +39,6 @@ function handleChange(event: Event) {
   );
 }
 </script>
-
 <template>
   <label :class="classes">
     <input

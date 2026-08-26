@@ -1,24 +1,19 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export type BadgeVariant =
-  | "default"
-  | "success"
-  | "warning"
-  | "danger"
-  | "info"
-  | "brand";
+import type {
+  BadgeProps,
+} from "@paraxe/core";
 
-interface Props {
-  variant?: BadgeVariant;
-}
-
-const props = withDefaults(defineProps<Props>(), {
-  variant: "default",
-});
+const props = withDefaults(
+  defineProps<BadgeProps>(),
+  {
+    variant: "default",
+  },
+);
 
 const badgeClasses = computed(() => ({
-  "badge": true,
+  badge: true,
   [`badge-${props.variant}`]: true,
 }));
 </script>

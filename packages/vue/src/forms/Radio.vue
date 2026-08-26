@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export interface RadioProps {
-  modelValue?: string | number | null;
-  value: string | number;
-  name: string;
-  disabled?: boolean;
-}
+import type {
+  RadioProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<RadioProps>(),
@@ -23,13 +20,17 @@ const emit = defineEmits<{
 }>();
 
 const checked = computed(
-  () => props.modelValue === props.value,
+  () =>
+    props.modelValue ===
+    props.value,
 );
 
 const classes = computed(() => ({
   radio: true,
-  "radio--checked": checked.value,
-  "radio--disabled": props.disabled,
+  "radio--checked":
+    checked.value,
+  "radio--disabled":
+    props.disabled,
 }));
 
 function handleChange() {

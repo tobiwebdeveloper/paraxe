@@ -4,10 +4,10 @@ import {
   inject,
 } from "vue";
 
-export interface ListItemProps {
-  value: string | number;
-  disabled?: boolean;
-}
+import type {
+  ListItemProps,
+  ListContext,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<ListItemProps>(),
@@ -15,19 +15,6 @@ const props = withDefaults(
     disabled: false,
   },
 );
-
-interface ListContext {
-  selectable: boolean;
-  multiple: boolean;
-
-  isSelected: (
-    value: string | number
-  ) => boolean;
-
-  toggleSelection: (
-    value: string | number
-  ) => void;
-}
 
 const injectedList = inject<ListContext>("loba-list");
 
@@ -38,12 +25,6 @@ if (!injectedList) {
 }
 
 const list = injectedList;
-
-if (!list) {
-  throw new Error(
-    "ListItem must be used inside a List.",
-  );
-}
 
 const isSelected = computed(() =>
   list.isSelected(props.value),

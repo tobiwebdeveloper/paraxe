@@ -2,37 +2,29 @@
 import { computed } from "vue";
 
 import type {
-    ButtonVariant,
-    ButtonSize,
-    ButtonWidth,
-    ButtonIconPosition,
+  ButtonProps,
+  ButtonEvents,
+  ButtonSize,
 } from "@paraxe/core";
 
-interface Props {
-    variant?: ButtonVariant;
-    size?: ButtonSize;
-    width?: ButtonWidth;
-    iconPosition?: ButtonIconPosition;
-    disabled?: boolean;
-    loading?: boolean;
-}
-
-const props = withDefaults(defineProps<Props>(),
-{
+const props = withDefaults(
+  defineProps<ButtonProps>(),
+  {
     variant: "primary",
     size: "medium",
     width: "auto",
     iconPosition: "leading",
     disabled: false,
     loading: false,
-}
-)
+  },
+);
 
-const emit = defineEmits<{
-  activate: [];
-}>()
+const emit = defineEmits<ButtonEvents>();
 
-const sizeClasses: Record<ButtonSize, string> = {
+const sizeClasses: Record<
+  ButtonSize,
+  string
+> = {
   small: "btn-sm",
   medium: "btn-md",
   large: "btn-lg",
@@ -41,9 +33,10 @@ const sizeClasses: Record<ButtonSize, string> = {
 const buttonClasses = computed(() => [
   `btn-${props.variant}`,
   sizeClasses[props.size],
-  props.width === "full" ? "btn-full" : "",
+  props.width === "full"
+    ? "btn-full"
+    : "",
 ]);
-
 </script>
 <template>
     <button

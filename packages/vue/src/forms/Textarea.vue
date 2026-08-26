@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-interface Props {
-  modelValue?: string;
-  disabled?: boolean;
-  readonly?: boolean;
-  error?: boolean;
-  success?: boolean;
-  maxlength?: number;
-}
+import type {
+  TextareaProps,
+} from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: "",
-  disabled: false,
-  readonly: false,
-  error: false,
-  success: false,
-  maxlength: undefined,
-});
+const props = withDefaults(
+  defineProps<TextareaProps>(),
+  {
+    modelValue: "",
+    disabled: false,
+    readonly: false,
+    error: false,
+    success: false,
+    maxlength: undefined,
+  },
+);
 
 const emit = defineEmits<{
-  "update:modelValue": [value: string];
+  "update:modelValue": [
+    value: string,
+  ];
 }>();
 
 const textareaClasses = computed(() => ({
@@ -28,9 +28,16 @@ const textareaClasses = computed(() => ({
   "input-success": props.success,
 }));
 
-function handleInput(event: Event): void {
-  const target = event.target as HTMLTextAreaElement;
-  emit("update:modelValue", target.value);
+function handleInput(
+  event: Event,
+): void {
+  const target =
+    event.target as HTMLTextAreaElement;
+
+  emit(
+    "update:modelValue",
+    target.value,
+  );
 }
 </script>
 

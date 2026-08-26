@@ -1,31 +1,28 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import type { InputType } from "@paraxe/core";
 
-interface Props {
-  type?: InputType;
-  placeholder?: string;
-  modelValue?: string;
-  required?: boolean;
-  disabled?: boolean;
-  readonly?: boolean;
-  error?: boolean;
-  success?: boolean;
-}
+import type {
+  InputProps,
+} from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
-  type: "text",
-  placeholder: "",
-  modelValue: "",
-  required: false,
-  disabled: false,
-  readonly: false,
-  error: false,
-  success: false,
-});
+const props = withDefaults(
+  defineProps<InputProps>(),
+  {
+    type: "text",
+    placeholder: "",
+    modelValue: "",
+    required: false,
+    disabled: false,
+    readonly: false,
+    error: false,
+    success: false,
+  },
+);
 
 const emit = defineEmits<{
-  "update:modelValue": [value: string];
+  "update:modelValue": [
+    value: string,
+  ];
 }>();
 
 const inputClasses = computed(() => ({
@@ -33,7 +30,9 @@ const inputClasses = computed(() => ({
   "input-success": props.success,
 }));
 
-function handleInput(event: Event): void {
+function handleInput(
+  event: Event,
+): void {
   emit(
     "update:modelValue",
     (event.target as HTMLInputElement).value,

@@ -1,27 +1,13 @@
-```vue
 <script setup lang="ts">
 import {
   computed,
   ref,
 } from "vue";
 
-export interface TableColumn<T = unknown> {
-  key: string;
-  label: string;
-  sortable?: boolean;
-  width?: string;
-  align?: "start" | "center" | "end";
-}
-
-export interface TableProps<T = unknown> {
-  columns: TableColumn<T>[];
-  rows: T[];
-  rowKey?: string;
-  sortable?: boolean;
-  selectable?: boolean;
-  multiple?: boolean;
-  loading?: boolean;
-}
+import type {
+  TableColumn,
+  TableProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<TableProps>(),
@@ -69,10 +55,7 @@ function getRowValue(
   }
 
   return (
-    row as Record<
-      string,
-      unknown
-    >
+    row as Record<string, unknown>
   )[key];
 }
 

@@ -5,24 +5,11 @@ import {
   watch,
 } from "vue";
 
-export interface ListProps {
-  selectable?: boolean;
-  multiple?: boolean;
-}
-
-export interface ListContext {
-  selectable: boolean;
-  multiple: boolean;
-
-
-  isSelected: (
-    value: string | number
-  ) => boolean;
-
-  toggleSelection: (
-    value: string | number
-  ) => void;
-}
+import type {
+  ListProps,
+  ListContext,
+  ListModelValue,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<ListProps>(),
@@ -32,23 +19,11 @@ const props = withDefaults(
   },
 );
 
-const selectedValues = ref<
-  Set<string | number>
->(new Set());
+const selectedValues = ref<Set<string | number>>(
+  new Set(),
+);
 
-const emit = defineEmits<{
-  "update:modelValue": [
-    value:
-      | string
-      | number
-      | Array<string | number>
-      | null,
-  ];
-}>();
-
-const modelValue = defineModel<
-  string | number | Array<string | number> | null
->({
+const modelValue = defineModel<ListModelValue>({
   default: null,
 });
 

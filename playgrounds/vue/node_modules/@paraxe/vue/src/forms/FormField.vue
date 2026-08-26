@@ -2,24 +2,21 @@
 import Label from "../typography/Label.vue";
 import Text from "../typography/Text.vue";
 
-interface Props {
-  id: string;
-  label?: string;
-  description?: string;
-  error?: string;
-  required?: boolean;
-  optional?: boolean;
-  disabled?: boolean;
-}
+import type {
+  FormFieldProps,
+} from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
-  label: undefined,
-  description: undefined,
-  error: undefined,
-  required: false,
-  optional: false,
-  disabled: false,
-});
+const props = withDefaults(
+  defineProps<FormFieldProps>(),
+  {
+    label: undefined,
+    description: undefined,
+    error: undefined,
+    required: false,
+    optional: false,
+    disabled: false,
+  },
+);
 </script>
 
 <template>

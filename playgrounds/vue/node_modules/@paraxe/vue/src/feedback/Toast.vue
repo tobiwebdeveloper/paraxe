@@ -5,22 +5,12 @@ import {
   watch,
 } from "vue";
 
-type ToastVariant =
-  | "info"
-  | "success"
-  | "warning"
-  | "danger";
-
-interface Props {
-  modelValue?: boolean;
-  title?: string;
-  variant?: ToastVariant;
-  duration?: number;
-  dismissible?: boolean;
-}
+import type {
+  ToastProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<ToastProps>(),
   {
     modelValue: false,
     title: undefined,
@@ -34,7 +24,6 @@ const emit = defineEmits<{
   "update:modelValue": [
     value: boolean,
   ];
-
   close: [];
 }>();
 
@@ -55,7 +44,6 @@ function clearTimer() {
 
 function close() {
   clearTimer();
-
   visible.value = false;
 
   emit(

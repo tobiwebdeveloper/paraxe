@@ -1,32 +1,10 @@
 <script setup lang="ts">
-import {
-  computed,
-  provide,
-} from "vue";
+import { computed, provide } from "vue";
 
-export interface ChoiceGroupProps {
-  modelValue?:
-    | string
-    | number
-    | Array<string | number>
-    | null;
-
-  multiple?: boolean;
-  disabled?: boolean;
-}
-
-export interface ChoiceGroupContext {
-  multiple: boolean;
-  disabled: boolean;
-
-  isSelected: (
-    value: string | number,
-  ) => boolean;
-
-  toggleChoice: (
-    value: string | number,
-  ) => void;
-}
+import type {
+  ChoiceGroupProps,
+  ChoiceGroupContext,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<ChoiceGroupProps>(),
@@ -49,13 +27,16 @@ const emit = defineEmits<{
 
 const classes = computed(() => ({
   "choice-group": true,
-  "choice-group--multiple": props.multiple,
+  "choice-group--multiple":
+    props.multiple,
 }));
 
 const selectedValues = computed<
   Array<string | number>
 >(() => {
-  if (Array.isArray(props.modelValue)) {
+  if (
+    Array.isArray(props.modelValue)
+  ) {
     return props.modelValue;
   }
 

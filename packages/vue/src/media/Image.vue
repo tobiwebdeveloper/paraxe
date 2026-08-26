@@ -1,17 +1,10 @@
 <script setup lang="ts">
 import type {
-  ImageAspectRatio,
-  ImageFit,
+  ImageProps,
 } from "@paraxe/core";
 
-interface Props {
-  src: string;
-  alt: string;
-  fit?: ImageFit;
-  aspectRatio?: ImageAspectRatio;
-}
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<ImageProps>(), {
   fit: "cover",
   aspectRatio: "auto",
 });

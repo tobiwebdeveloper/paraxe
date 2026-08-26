@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import type { EmptyStateProps } from "@paraxe/core";
 
-export interface Props {
-  as?: string;
-}
-
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<EmptyStateProps>(), {
   as: "div",
 });
 

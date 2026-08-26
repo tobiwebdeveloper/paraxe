@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { computed, inject } from "vue";
 
-interface Props {
-  id: string;
-  disabled?: boolean;
-}
+import type { AccordionItemProps } from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<AccordionItemProps>(), {
   disabled: false,
 });
 

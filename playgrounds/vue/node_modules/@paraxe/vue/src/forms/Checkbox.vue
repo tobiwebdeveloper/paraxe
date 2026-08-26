@@ -1,32 +1,43 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-interface Props {
-  modelValue?: boolean;
-  disabled?: boolean;
-  name?: string;
-  required?: boolean;
-}
+import type {
+  CheckboxProps,
+} from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
-  modelValue: false,
-  disabled: false,
-  required: false,
-});
+const props = withDefaults(
+  defineProps<CheckboxProps>(),
+  {
+    modelValue: false,
+    disabled: false,
+    required: false,
+  },
+);
 
 const emit = defineEmits<{
-  "update:modelValue": [value: boolean];
+  "update:modelValue": [
+    value: boolean,
+  ];
 }>();
 
 const checkboxClasses = computed(() => ({
   checkbox: true,
-  "checkbox--checked": props.modelValue,
-  "checkbox--disabled": props.disabled,
+  "checkbox--checked":
+    props.modelValue,
+  "checkbox--disabled":
+    props.disabled,
 }));
 
-function handleChange(event: Event): void {
-  const target = event.target as HTMLInputElement;
-  emit("update:modelValue", target.checked);
+function handleChange(
+  event: Event,
+): void {
+  const target =
+    event.target as HTMLInputElement;
+
+  emit(
+    "update:modelValue",
+    target.checked,
+  );
 }
 </script>
 

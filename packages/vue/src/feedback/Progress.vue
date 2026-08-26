@@ -1,22 +1,12 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-type ProgressVariant =
-  | "default"
-  | "success"
-  | "warning"
-  | "danger";
-
-interface Props {
-  value?: number;
-  max?: number;
-  indeterminate?: boolean;
-  variant?: ProgressVariant;
-  showValue?: boolean;
-}
+import type {
+  ProgressProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<ProgressProps>(),
   {
     value: 0,
     max: 100,

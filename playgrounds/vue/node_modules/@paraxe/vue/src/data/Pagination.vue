@@ -1,13 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-export interface PaginationProps {
-  currentPage: number;
-  totalItems: number;
-  pageSize: number;
-  siblingCount?: number;
-  compact?: boolean;
-}
+import type {
+  PaginationProps,
+  PaginationEmits,
+} from "@paraxe/core";
 
 const props = withDefaults(
   defineProps<PaginationProps>(),
@@ -17,11 +14,7 @@ const props = withDefaults(
   },
 );
 
-const emit = defineEmits<{
-  "update:currentPage": [
-    page: number,
-  ];
-}>();
+const emit = defineEmits<PaginationEmits>();
 
 const totalPages = computed(() =>
   Math.max(
@@ -69,6 +62,7 @@ const pages = computed<PaginationItem[]>(() => {
   );
 
   const showLeftDots = left > 2;
+
   const showRightDots =
     right < total - 1;
 

@@ -4,13 +4,12 @@ import {
   inject,
 } from "vue";
 
-interface Props {
-  href?: string;
-  current?: boolean;
-}
+import type {
+  BreadcrumbsProps,
+} from "@paraxe/core";
 
 const props = withDefaults(
-  defineProps<Props>(),
+  defineProps<BreadcrumbsProps>(),
   {
     href: undefined,
     current: false,

@@ -1,10 +1,7 @@
 <script setup lang="ts">
-interface Props {
-  width?: "default" | "wide";
-  align?: "left" | "center";
-}
+import type { SectionHeaderProps } from "@paraxe/core";
 
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<SectionHeaderProps>(), {
   width: "default",
   align: "left",
 });
