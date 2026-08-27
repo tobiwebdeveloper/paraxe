@@ -1,7 +1,4 @@
-export interface SwitchProps {
-    modelValue?: boolean;
-    disabled?: boolean;
-}
+import { SwitchProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;

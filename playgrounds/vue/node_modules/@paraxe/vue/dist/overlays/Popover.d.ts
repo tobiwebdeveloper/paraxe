@@ -1,14 +1,12 @@
-interface Props {
-    placement?: "top" | "bottom" | "left" | "right";
-}
+import { PopoverProps } from '@paraxe/core';
 declare var __VLS_1: {}, __VLS_3: {};
 type __VLS_Slots = {} & {
     trigger?: (props: typeof __VLS_1) => any;
 } & {
     default?: (props: typeof __VLS_3) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    placement: "top" | "bottom" | "left" | "right";
+declare const __VLS_base: import('vue').DefineComponent<PopoverProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<PopoverProps> & Readonly<{}>, {
+    placement: import('@paraxe/core').PopoverPlacement;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
 declare const _default: typeof __VLS_export;

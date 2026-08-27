@@ -1,20 +1,16 @@
-type AlertVariant = "info" | "success" | "warning" | "danger";
-interface Props {
-    variant?: AlertVariant;
-    dismissible?: boolean;
-}
+import { AlertProps } from '@paraxe/core';
 declare var __VLS_1: {}, __VLS_3: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 } & {
     actions?: (props: typeof __VLS_3) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
+declare const __VLS_base: import('vue').DefineComponent<AlertProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     close: () => any;
-}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
+}, string, import('vue').PublicProps, Readonly<AlertProps> & Readonly<{
     onClose?: (() => any) | undefined;
 }>, {
-    variant: AlertVariant;
+    variant: import('@paraxe/core').AlertVariant;
     dismissible: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;

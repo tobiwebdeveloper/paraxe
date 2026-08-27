@@ -1,14 +1,11 @@
-interface Props {
-    href?: string;
-    current?: boolean;
-}
+import { BreadcrumbProps } from '@paraxe/core';
 declare var __VLS_1: {}, __VLS_3: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 } & {
     default?: (props: typeof __VLS_3) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
+declare const __VLS_base: import('vue').DefineComponent<BreadcrumbProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<BreadcrumbProps> & Readonly<{}>, {
     href: string;
     current: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;

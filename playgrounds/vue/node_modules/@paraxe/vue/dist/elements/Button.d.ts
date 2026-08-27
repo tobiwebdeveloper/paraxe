@@ -1,25 +1,17 @@
-import { ButtonVariant, ButtonSize, ButtonWidth, ButtonIconPosition } from '@paraxe/core';
-interface Props {
-    variant?: ButtonVariant;
-    size?: ButtonSize;
-    width?: ButtonWidth;
-    iconPosition?: ButtonIconPosition;
-    disabled?: boolean;
-    loading?: boolean;
-}
+import { ButtonProps, ButtonSize } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
+declare const __VLS_base: import('vue').DefineComponent<ButtonProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     activate: () => any;
-}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
+}, string, import('vue').PublicProps, Readonly<ButtonProps> & Readonly<{
     onActivate?: (() => any) | undefined;
 }>, {
-    variant: ButtonVariant;
+    variant: import('@paraxe/core').ButtonVariant;
     size: ButtonSize;
-    width: ButtonWidth;
-    iconPosition: ButtonIconPosition;
+    width: import('@paraxe/core').ButtonWidth;
+    iconPosition: import('@paraxe/core').ButtonIconPosition;
     disabled: boolean;
     loading: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;

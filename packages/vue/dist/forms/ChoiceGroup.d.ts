@@ -1,14 +1,4 @@
-export interface ChoiceGroupProps {
-    modelValue?: string | number | Array<string | number> | null;
-    multiple?: boolean;
-    disabled?: boolean;
-}
-export interface ChoiceGroupContext {
-    multiple: boolean;
-    disabled: boolean;
-    isSelected: (value: string | number) => boolean;
-    toggleChoice: (value: string | number) => void;
-}
+import { ChoiceGroupProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;

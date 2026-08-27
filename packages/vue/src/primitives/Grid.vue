@@ -28,8 +28,3 @@ const gridClasses = computed(() => [
   </div>
 </template>
 
-<template>
-  <div :class="gridClasses">
-    <slot />
-  </div>
-</template>

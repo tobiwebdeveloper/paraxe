@@ -1,23 +1,16 @@
-type ToastVariant = "info" | "success" | "warning" | "danger";
-interface Props {
-    modelValue?: boolean;
-    title?: string;
-    variant?: ToastVariant;
-    duration?: number;
-    dismissible?: boolean;
-}
+import { ToastProps } from '@paraxe/core';
 declare var __VLS_7: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_7) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
+declare const __VLS_base: import('vue').DefineComponent<ToastProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
     close: () => any;
-}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
+}, string, import('vue').PublicProps, Readonly<ToastProps> & Readonly<{
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
     onClose?: (() => any) | undefined;
 }>, {
-    variant: ToastVariant;
+    variant: import('@paraxe/core').ToastVariant;
     title: string;
     modelValue: boolean;
     dismissible: boolean;

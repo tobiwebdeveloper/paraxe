@@ -1,14 +1,10 @@
-type StackSize = "small" | "medium" | "large";
-interface Props {
-    size?: StackSize;
-    fullWidth?: boolean;
-}
+import { StackProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    size: StackSize;
+declare const __VLS_base: import('vue').DefineComponent<StackProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<StackProps> & Readonly<{}>, {
+    size: import('@paraxe/core').StackSize;
     fullWidth: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;

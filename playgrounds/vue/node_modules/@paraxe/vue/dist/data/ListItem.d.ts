@@ -1,7 +1,4 @@
-export interface ListItemProps {
-    value: string | number;
-    disabled?: boolean;
-}
+import { ListItemProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;

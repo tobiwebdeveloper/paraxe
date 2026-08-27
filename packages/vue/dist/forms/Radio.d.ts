@@ -1,9 +1,4 @@
-export interface RadioProps {
-    modelValue?: string | number | null;
-    value: string | number;
-    name: string;
-    disabled?: boolean;
-}
+import { RadioProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;

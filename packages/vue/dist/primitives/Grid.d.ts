@@ -1,19 +1,12 @@
-type GridColumns = 1 | 2 | 3 | 4 | 5 | 6;
-type GridRows = 1 | 2 | 3 | 4 | 5 | 6;
-type GridSize = "small" | "medium" | "large";
-interface Props {
-    columns?: GridColumns;
-    rows?: GridRows;
-    size?: GridSize;
-}
+import { GridProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    size: GridSize;
-    columns: GridColumns;
-    rows: GridRows;
+declare const __VLS_base: import('vue').DefineComponent<GridProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<GridProps> & Readonly<{}>, {
+    size: import('@paraxe/core').GridSize;
+    columns: import('@paraxe/core').GridColumns;
+    rows: import('@paraxe/core').GridRows;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
 declare const _default: typeof __VLS_export;

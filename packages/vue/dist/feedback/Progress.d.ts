@@ -1,19 +1,12 @@
-type ProgressVariant = "default" | "success" | "warning" | "danger";
-interface Props {
-    value?: number;
-    max?: number;
-    indeterminate?: boolean;
-    variant?: ProgressVariant;
-    showValue?: boolean;
-}
+import { ProgressProps } from '@paraxe/core';
 declare var __VLS_1: {}, __VLS_3: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 } & {
     label?: (props: typeof __VLS_3) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    variant: ProgressVariant;
+declare const __VLS_base: import('vue').DefineComponent<ProgressProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<ProgressProps> & Readonly<{}>, {
+    variant: import('@paraxe/core').ProgressVariant;
     value: number;
     max: number;
     indeterminate: boolean;

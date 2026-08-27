@@ -1,9 +1,4 @@
-export interface SidebarItemProps {
-    active?: boolean;
-    disabled?: boolean;
-    href?: string;
-    expanded?: boolean;
-}
+import { SidebarItemProps } from '@paraxe/core';
 declare var __VLS_9: {}, __VLS_11: {}, __VLS_13: {};
 type __VLS_Slots = {} & {
     icon?: (props: typeof __VLS_9) => any;

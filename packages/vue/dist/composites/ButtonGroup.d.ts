@@ -1,14 +1,10 @@
-type ButtonGroupAlign = "start" | "center" | "end";
-interface Props {
-    align?: ButtonGroupAlign;
-    stack?: boolean;
-}
+import { ButtonGroupProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    align: ButtonGroupAlign;
+declare const __VLS_base: import('vue').DefineComponent<ButtonGroupProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<ButtonGroupProps> & Readonly<{}>, {
+    align: import('@paraxe/core').ButtonGroupAlign;
     stack: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;

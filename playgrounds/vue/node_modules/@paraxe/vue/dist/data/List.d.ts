@@ -1,16 +1,7 @@
-export interface ListProps {
-    selectable?: boolean;
-    multiple?: boolean;
-}
-export interface ListContext {
-    selectable: boolean;
-    multiple: boolean;
-    isSelected: (value: string | number) => boolean;
-    toggleSelection: (value: string | number) => void;
-}
+import { ListProps, ListModelValue } from '@paraxe/core';
 type __VLS_Props = ListProps;
 type __VLS_ModelProps = {
-    modelValue?: string | number | Array<string | number> | null;
+    modelValue?: ListModelValue;
 };
 type __VLS_PublicProps = __VLS_Props & __VLS_ModelProps;
 declare var __VLS_1: {};
@@ -18,9 +9,9 @@ type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;
 };
 declare const __VLS_base: import('vue').DefineComponent<__VLS_PublicProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
-    "update:modelValue": (...args: unknown[]) => any;
+    "update:modelValue": (value: ListModelValue) => any;
 }, string, import('vue').PublicProps, Readonly<__VLS_PublicProps> & Readonly<{
-    "onUpdate:modelValue"?: ((...args: unknown[]) => any) | undefined;
+    "onUpdate:modelValue"?: ((value: ListModelValue) => any) | undefined;
 }>, {
     multiple: boolean;
     selectable: boolean;

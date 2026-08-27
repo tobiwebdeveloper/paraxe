@@ -1,6 +1,4 @@
-export interface SidebarProps {
-    collapsed?: boolean;
-}
+import { SidebarProps } from '@paraxe/core';
 declare var __VLS_1: {}, __VLS_3: {}, __VLS_5: {};
 type __VLS_Slots = {} & {
     header?: (props: typeof __VLS_1) => any;

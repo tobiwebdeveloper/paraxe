@@ -1,13 +1,10 @@
-type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-interface Props {
-    level?: HeadingLevel;
-}
+import { HeadingProps } from '@paraxe/core';
 declare var __VLS_8: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_8) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    level: HeadingLevel;
+declare const __VLS_base: import('vue').DefineComponent<HeadingProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<HeadingProps> & Readonly<{}>, {
+    level: import('@paraxe/core').HeadingLevel;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
 declare const _default: typeof __VLS_export;

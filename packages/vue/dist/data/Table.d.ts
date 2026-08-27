@@ -1,19 +1,4 @@
-export interface TableColumn<T = unknown> {
-    key: string;
-    label: string;
-    sortable?: boolean;
-    width?: string;
-    align?: "start" | "center" | "end";
-}
-export interface TableProps<T = unknown> {
-    columns: TableColumn<T>[];
-    rows: T[];
-    rowKey?: string;
-    sortable?: boolean;
-    selectable?: boolean;
-    multiple?: boolean;
-    loading?: boolean;
-}
+import { TableProps } from '@paraxe/core';
 type __VLS_Props = TableProps;
 declare var __VLS_2: `cell-${string}`, __VLS_3: {
     row: unknown;

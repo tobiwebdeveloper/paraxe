@@ -1,16 +1,11 @@
-type TextTone = "primary" | "secondary" | "muted" | "accent" | "inverse" | "brand";
-type TextElement = "p" | "span" | "div";
-interface Props {
-    as?: TextElement;
-    tone?: TextTone;
-}
+import { TextProps } from '@paraxe/core';
 declare var __VLS_8: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_8) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{}>, {
-    as: TextElement;
-    tone: TextTone;
+declare const __VLS_base: import('vue').DefineComponent<TextProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<TextProps> & Readonly<{}>, {
+    as: import('@paraxe/core').TextElement;
+    tone: import('@paraxe/core').TextTone;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, false, {}, any>;
 declare const __VLS_export: __VLS_WithSlots<typeof __VLS_base, __VLS_Slots>;
 declare const _default: typeof __VLS_export;

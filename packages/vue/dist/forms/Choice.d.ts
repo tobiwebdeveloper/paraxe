@@ -1,7 +1,4 @@
-export interface ChoiceProps {
-    value: string | number;
-    disabled?: boolean;
-}
+import { ChoiceProps } from '@paraxe/core';
 declare var __VLS_1: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_1) => any;

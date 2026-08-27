@@ -1,4 +1,4 @@
 allowBuilds:
   esbuild: true
 minimumReleaseAgeExclude:
-  - '@paraxe/core@1.1.0 || 1.1.1'
+  - '@paraxe/core@1.1.0 || 1.1.1 || 1.1.2'

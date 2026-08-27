@@ -1,16 +1,11 @@
-interface Props {
-    modelValue?: boolean;
-    side?: "left" | "right";
-    closeOnBackdrop?: boolean;
-    closeOnEscape?: boolean;
-}
+import { DrawerProps } from '@paraxe/core';
 declare var __VLS_7: {};
 type __VLS_Slots = {} & {
     default?: (props: typeof __VLS_7) => any;
 };
-declare const __VLS_base: import('vue').DefineComponent<Props, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
+declare const __VLS_base: import('vue').DefineComponent<DrawerProps, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {
     "update:modelValue": (value: boolean) => any;
-}, string, import('vue').PublicProps, Readonly<Props> & Readonly<{
+}, string, import('vue').PublicProps, Readonly<DrawerProps> & Readonly<{
     "onUpdate:modelValue"?: ((value: boolean) => any) | undefined;
 }>, {
     modelValue: boolean;
