@@ -1,9 +1,9 @@
 {
   "name": "@paraxe/design",
-  "version": "1.4.2",
-  "buildTimestamp": "2026-08-18T20:51:33.402Z",
-  "gitSha": null,
-  "sourceHash": "510b70a699d2602d",
+  "version": "1.5.0",
+  "buildTimestamp": "2026-08-27T11:48:22.136Z",
+  "gitSha": "462eeb2",
+  "sourceHash": "a50547f24bf49b9f",
   "files": [
     "index.css",
     "index.d.ts",
