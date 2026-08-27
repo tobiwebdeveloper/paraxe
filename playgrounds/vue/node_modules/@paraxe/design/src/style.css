@@ -2,4 +2,4 @@
 
 @import "./tokens.css";
 @import "./themes/default.css";
-@import "./components.css";
+@import "./components/index.css";

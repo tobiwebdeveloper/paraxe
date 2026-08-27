@@ -31,12 +31,12 @@
      BRAND
      A single brand colour generates the full colour family.
   ===================================================== */
-  --brand-primary: oklch(0.846 0.073 86.8);
-  --brand-primary-hover: oklch(0.786 0.073 86.8);
-  --brand-primary-active: oklch(0.746 0.073 86.8);
-  --brand-primary-light: oklch(0.980 0.073 86.8);
-  --brand-primary-muted: oklch(0.846 0.009 86.8 / 0.15);
-  --brand-glow: oklch(0.846 0.022 86.8 / 0.25);
+  --brand-primary: oklch(0.733 0.109 65.1);
+  --brand-primary-hover: oklch(0.673 0.109 65.1);
+  --brand-primary-active: oklch(0.633 0.109 65.1);
+  --brand-primary-light: oklch(0.913 0.109 65.1);
+  --brand-primary-muted: oklch(0.733 0.013 65.1 / 0.15);
+  --brand-glow: oklch(0.733 0.033 65.1 / 0.25);
 
   /* Semantic text-on-brand — ensures readable contrast on brand backgrounds */
   --text-on-brand: oklch(15.434% 0.00002 271.152);
@@ -55,31 +55,31 @@
   /* =====================================================
      BACKGROUNDS
   ===================================================== */
-  --background-primary: #1f1b16;
-  --background-secondary: oklch(0.243 0.006 86.8);
+  --background-primary: #0D0B09;
+  --background-secondary: oklch(0.169 0.009 65.1);
 
 
   /* =====================================================
      SURFACES
      Intentional surface layers built from the background.
   ===================================================== */
-  --surface-base: oklch(0.243 0.006 86.8);
-  --surface-raised: oklch(0.287 0.006 86.8);
-  --surface-card: oklch(0.263 0.006 86.8);
-  --surface-hover: oklch(0.307 0.006 86.8);
+  --surface-base: oklch(0.169 0.009 65.1);
+  --surface-raised: oklch(0.213 0.009 65.1);
+  --surface-card: oklch(0.189 0.009 65.1);
+  --surface-hover: oklch(0.233 0.009 65.1);
 
   /* Premium brand-tinted card treatment */
-  --card-gradient: linear-gradient(180deg, oklch(0.846 0.004 86.8 / 0.06), transparent 45%);
-  --card-highlight: inset 0 1px 0 0 oklch(0.846 0.007 86.8 / 0.05);
+  --card-gradient: linear-gradient(180deg, oklch(0.733 0.007 65.1 / 0.06), transparent 45%);
+  --card-highlight: inset 0 1px 0 0 oklch(0.733 0.011 65.1 / 0.05);
 
 
   /* =====================================================
      TEXT
   ===================================================== */
-  --text-primary: oklch(0.930 0.012 73.3);
-  --text-secondary: oklch(0.730 0.012 73.3);
-  --text-muted: oklch(0.550 0.012 73.3);
-  --text-inverse: oklch(0.090 0.012 73.3);
+  --text-primary: oklch(0.930 0.012 67.8);
+  --text-secondary: oklch(0.730 0.012 67.8);
+  --text-muted: oklch(0.550 0.012 67.8);
+  --text-inverse: oklch(0.090 0.012 67.8);
 
   /* Compatibility aliases */
   --text-accent: var(--brand-primary);
@@ -90,36 +90,36 @@
   /* =====================================================
      BORDERS
   ===================================================== */
-  --border-default: oklch(0.295 0.002 73.3);
-  --border-strong: oklch(0.352 0.003 73.3);
-  --border-subtle: oklch(0.260 0.001 73.3);
-  --border-focus: oklch(0.535 0.031 80.1);
+  --border-default: oklch(0.229 0.001 67.8);
+  --border-strong: oklch(0.291 0.002 67.8);
+  --border-subtle: oklch(0.190 0.001 67.8);
+  --border-focus: oklch(0.442 0.047 66.5);
 
 
 /* =====================================================
      GLASSMORPHISM (colour values — blur is in tokens.css)
      Derived from background + brand tint for hue harmony.
   ===================================================== */
-  --glass-background: oklch(0.275 0.007 86.8 / 0.28);
-  --glass-border: oklch(0.352 0.003 73.3 / 0.2);
+  --glass-background: oklch(0.201 0.011 65.1 / 0.28);
+  --glass-border: oklch(0.291 0.002 67.8 / 0.2);
 
 
   /* =====================================================
      OVERLAYS
      Derived from background for natural depth.
   ===================================================== */
-  --overlay-scrim: oklch(0.112 0.000 0.0 / 0.6);
-  --overlay-scrim-strong: oklch(0.090 0.000 0.0 / 0.75);
+  --overlay-scrim: oklch(0.076 0.000 0.0 / 0.6);
+  --overlay-scrim-strong: oklch(0.061 0.000 0.0 / 0.75);
 
 
   /* =====================================================
      SHADOWS
      Brand-tinted shadows for cohesive depth perception.
   ===================================================== */
-  --shadow-elevation-low: 0 2px 8px oklch(0.000 0.000 86.8 / 0.08);
-  --shadow-elevation-medium: 0 4px 24px oklch(0.000 0.000 86.8 / 0.12);
-  --shadow-elevation-high: 0 8px 40px oklch(0.000 0.000 86.8 / 0.18);
-  --shadow-elevation-modal: 0 20px 60px oklch(0.000 0.000 86.8 / 0.24);
+  --shadow-elevation-low: 0 2px 8px oklch(0.000 0.000 65.1 / 0.08);
+  --shadow-elevation-medium: 0 4px 24px oklch(0.000 0.000 65.1 / 0.12);
+  --shadow-elevation-high: 0 8px 40px oklch(0.000 0.000 65.1 / 0.18);
+  --shadow-elevation-modal: 0 20px 60px oklch(0.000 0.000 65.1 / 0.24);
 
 
   /* =====================================================
@@ -156,16 +156,16 @@
   --text-on-brand: oklch(0.090 0.012 29.4);
 
   --background-primary: #ffffff;
-  --background-secondary: oklch(0.970 0.006 86.8);
+  --background-secondary: oklch(0.970 0.009 65.1);
 
-  --surface-base: oklch(0.970 0.006 86.8);
-  --surface-raised: oklch(0.938 0.006 86.8);
-  --surface-card: oklch(0.962 0.006 86.8);
-  --surface-hover: oklch(0.918 0.006 86.8);
+  --surface-base: oklch(0.970 0.009 65.1);
+  --surface-raised: oklch(0.938 0.009 65.1);
+  --surface-card: oklch(0.962 0.009 65.1);
+  --surface-hover: oklch(0.918 0.009 65.1);
 
   /* Premium brand-tinted card treatment */
-  --card-gradient: linear-gradient(180deg, oklch(0.846 0.004 86.8 / 0.06), transparent 45%);
-  --card-highlight: inset 0 1px 0 0 oklch(0.846 0.007 86.8 / 0.05);
+  --card-gradient: linear-gradient(180deg, oklch(0.733 0.007 65.1 / 0.06), transparent 45%);
+  --card-highlight: inset 0 1px 0 0 oklch(0.733 0.011 65.1 / 0.05);
 
   /* Text derived from LIGHT background → mixes with black → dark readable text */
   --text-primary: oklch(0.090 0.012 89.9);
@@ -181,10 +181,10 @@
   --border-default: oklch(0.909 0.001 89.9);
   --border-strong: oklch(0.836 0.002 89.9);
   --border-subtle: oklch(0.954 0.001 89.9);
-  --border-focus: oklch(0.923 0.031 88.4);
+  --border-focus: oklch(0.867 0.046 77.5);
 
   /* Glass derived from light background */
-  --glass-background: oklch(0.950 0.007 86.8 / 0.55);
+  --glass-background: oklch(0.950 0.011 65.1 / 0.55);
   --glass-border: oklch(0.836 0.002 89.9 / 0.15);
 
   /* Overlays */
@@ -192,10 +192,10 @@
   --overlay-scrim-strong: oklch(0.400 0.000 0.0 / 0.75);
 
   /* Shadows - lighter for light mode */
-  --shadow-elevation-low: 0 2px 8px oklch(0.020 0.000 86.8 / 0.08);
-  --shadow-elevation-medium: 0 4px 24px oklch(0.020 0.000 86.8 / 0.12);
-  --shadow-elevation-high: 0 8px 40px oklch(0.020 0.000 86.8 / 0.18);
-  --shadow-elevation-modal: 0 20px 60px oklch(0.020 0.000 86.8 / 0.24);
+  --shadow-elevation-low: 0 2px 8px oklch(0.020 0.000 65.1 / 0.08);
+  --shadow-elevation-medium: 0 4px 24px oklch(0.020 0.000 65.1 / 0.12);
+  --shadow-elevation-high: 0 8px 40px oklch(0.020 0.000 65.1 / 0.18);
+  --shadow-elevation-modal: 0 20px 60px oklch(0.020 0.000 65.1 / 0.24);
 
   /* Focus ring */
   --focus-ring-color: var(--border-focus);
