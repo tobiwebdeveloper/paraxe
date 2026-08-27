@@ -1,6 +1,6 @@
 {
   "name": "@paraxe/design",
-  "version": "1.4.2",
+  "version": "1.5.0",
   "description": "Paraxe design system — canonical tokens, themes, and presets. Source of truth for the entire ecosystem.",
   "type": "module",
   "main": "./dist/index.js",
