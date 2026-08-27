@@ -1,9 +1,9 @@
 {
   "name": "@paraxe/react",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
@@ -12,7 +12,19 @@
     }
   },
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "vite build",
     "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@paraxe/core": "^1.1.2",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.2.2",
+    "vite-plugin-dts": "^5.0.3"
   }
 }
