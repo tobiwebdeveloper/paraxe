@@ -16,3 +16,7 @@ export interface ListContext {
   isSelected: (value: ListValue) => boolean;
   toggleSelection: (value: ListValue) => void;
 }
+export interface ListItemProps {
+  value: string | number;
+  disabled?: boolean;
+}

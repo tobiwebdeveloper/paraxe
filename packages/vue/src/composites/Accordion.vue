@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { provide, ref, computed } from "vue";
-import type { AccordionProps } from "@/paraxe/core"
+import type { AccordionProps } from "@paraxe/core"
 
 type AccordionContext = {
   openItems: Readonly<ReturnType<typeof ref<string[]>>>;

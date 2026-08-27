@@ -6,6 +6,7 @@ import {
   ref,
   watch,
 } from "vue";
+
 import type { DrawerProps } from "@paraxe/core";
 
 const props = withDefaults(
@@ -167,14 +168,12 @@ onBeforeUnmount(() => {
 <template>
   <Teleport to="body">
     <div
-      v-if="modelValue"
+      v-if="props.modelValue"
       class="drawer"
       :class="{
-        'drawer--open': modelValue,
-        'drawer--left':
-          side === "left",
-        'drawer--right':
-          side === "right",
+        'drawer--open': props.modelValue,
+        'drawer--left': props.side === 'left',
+        'drawer--right': props.side === 'right',
       }"
       role="presentation"
     >

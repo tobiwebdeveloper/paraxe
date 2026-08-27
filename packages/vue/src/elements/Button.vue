@@ -19,7 +19,11 @@ const props = withDefaults(
   },
 );
 
-const emit = defineEmits<ButtonEvents>();
+type ButtonEmits = {
+  activate: [];
+};
+
+const emit = defineEmits<ButtonEmits>();
 
 const sizeClasses: Record<
   ButtonSize,
@@ -38,12 +42,14 @@ const buttonClasses = computed(() => [
     : "",
 ]);
 </script>
+
 <template>
-    <button
+  <button
     class="btn"
     :class="buttonClasses"
     :disabled="props.disabled || props.loading"
-    @click="emit('activate')">
+    @click="emit('activate')"
+  >
     <slot />
-    </button>
+  </button>
 </template>
