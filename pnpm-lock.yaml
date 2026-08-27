@@ -40,8 +40,8 @@ importers:
         specifier: ^4.5.2
         version: 4.5.2(magic-string@1.2.2)(magicast@0.5.4)(rolldown@1.2.5)(unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.5)(rollup@4.62.5)(vite@7.3.6(@types/node@22.20.1)(jiti@2.7.0)(lightningcss@1.33.0)(terser@5.50.0)(yaml@2.9.0)))
       '@paraxe/core':
-        specifier: ^1.0.0
-        version: 1.0.0
+        specifier: ^1.1.0
+        version: 1.1.0
       vue:
         specifier: ^3.5.13
         version: 3.5.41(typescript@5.9.3)
@@ -740,8 +740,8 @@ packages:
   '@oxc-project/types@0.146.0':
     resolution: {integrity: sha512-XC0QsnnhVe7sLIWmYmdPw7x5P0h4W8vUU3Nv1ySgWXtvCz8NizoAEpGXA0sOYoJQV2Rl13LgURAHQ5cI5ILCSA==}
 
-  '@paraxe/core@1.0.0':
-    resolution: {integrity: sha512-IcXnjNGXD3KIAYnRDwHQKTv38Ma5zIoO927gc1JFvP/SchR7gAJFxhFyZ7HwxkbsI1suSaFC0YktlOv1WK/R8w==}
+  '@paraxe/core@1.1.0':
+    resolution: {integrity: sha512-dQrx04Ij7Q6XcjN+/zsRzR0oh/TPIpS73TEwyORd4sgmlfOa/Dp2bKeLNznVI7bZ0eu1FlJ1c9hqbjBTTIaIQA==}
 
   '@parcel/watcher-wasm@2.6.0':
     resolution: {integrity: sha512-dtjbDxKSDPQ8AmA+pS4OFaHE1FKrjtGpLGBxw85uKFkRorjNbvDM/aFPgqosu40wprbp1xw2ZSxIKqghCUHe2w==}
@@ -4498,7 +4498,7 @@ snapshots:
 
   '@oxc-project/types@0.146.0': {}
 
-  '@paraxe/core@1.0.0': {}
+  '@paraxe/core@1.1.0': {}
 
   '@parcel/watcher-wasm@2.6.0':
     dependencies:

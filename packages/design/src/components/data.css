@@ -1,0 +1,415 @@
+/* ==========================================================================
+   DATA UI
+   Application-oriented collection, list, pagination, and table patterns.
+   Framework-agnostic. Consumes canonical Loba tokens.
+   ========================================================================== */
+
+/* ==========================================================================
+   EMPTY STATE
+   ========================================================================== */
+
+.empty-state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: var(--stack-gap);
+
+  padding: var(--space-12);
+  text-align: center;
+}
+
+.empty-state-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+
+  color: var(--text-muted);
+}
+
+.empty-state-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--stack-gap-sm);
+
+  max-width: var(--text-max-width-sm);
+}
+
+.empty-state-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--inline-gap);
+
+  margin-top: var(--space-2);
+}
+
+/* ==========================================================================
+   LIST
+   ========================================================================== */
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  border-top: 1px solid var(--border-subtle);
+}
+
+.list-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  padding: var(--space-4) var(--space-5);
+
+  border-bottom: 1px solid var(--border-subtle);
+
+  background: transparent;
+  color: var(--text-primary);
+
+  text-align: left;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    border-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+/* --------------------------------------------------------------------------
+   INTERACTIVE LIST ITEMS
+   -------------------------------------------------------------------------- */
+
+.list-item--selectable {
+  cursor: pointer;
+}
+
+.list-item--selectable:hover {
+  background: var(--surface-hover);
+}
+
+.list-item--selected {
+  background: var(--surface-card);
+  border-color: var(--border-default);
+}
+
+.list-item--selected:hover {
+  background: var(--surface-hover);
+}
+
+.list-item--disabled {
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: var(--interaction-opacity-disabled);
+}
+
+.list-item--disabled:hover {
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   LIST ITEM FOCUS
+   -------------------------------------------------------------------------- */
+
+.list-item--selectable:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+  z-index: 1;
+}
+
+/* ==========================================================================
+   PAGINATION
+   ========================================================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+
+  width: 100%;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+
+  flex: 0 0 auto;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+
+  flex: 1 1 auto;
+}
+.pagination-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: var(--button-min-height);
+  height: var(--button-min-height);
+
+  padding-inline: var(--space-3);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--text-secondary);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    border-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.pagination-item:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.pagination-item:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+.pagination-item--current {
+  background: var(--surface-card);
+  border-color: var(--border-default);
+  color: var(--text-primary);
+}
+
+.pagination-item--disabled {
+  color: var(--text-muted);
+  opacity: var(--interaction-opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: var(--button-min-height);
+  height: var(--button-min-height);
+
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.pagination-compact {
+  gap: var(--space-2);
+}
+
+.pagination-compact .pagination-item {
+  min-width: var(--button-min-height-sm);
+  height: var(--button-min-height-sm);
+
+  padding-inline: var(--space-2);
+
+  font-size: var(--font-size-xs);
+}
+
+/* ==========================================================================
+   TABLE
+   ========================================================================== */
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--card-radius);
+
+  background: var(--surface-card);
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+
+  color: var(--text-primary);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+}
+
+/* --------------------------------------------------------------------------
+   TABLE HEADER
+   -------------------------------------------------------------------------- */
+
+.table th {
+  padding: var(--space-4) var(--space-5);
+
+  border-bottom: 1px solid var(--border-default);
+
+  background: var(--surface-raised);
+  color: var(--text-muted);
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-wide);
+  text-align: left;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+.table th:first-child {
+  border-top-left-radius: calc(var(--card-radius) - 1px);
+}
+
+.table th:last-child {
+  border-top-right-radius: calc(var(--card-radius) - 1px);
+}
+
+/* --------------------------------------------------------------------------
+   SORTABLE HEADERS
+   -------------------------------------------------------------------------- */
+
+.table-header--sortable {
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.table-header--sortable:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.table-header--sorted {
+  color: var(--text-primary);
+}
+
+.table-header--sortable:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: calc(var(--focus-ring-offset) * -1);
+}
+
+/* --------------------------------------------------------------------------
+   TABLE BODY
+   -------------------------------------------------------------------------- */
+
+.table td {
+  padding: var(--space-4) var(--space-5);
+
+  border-bottom: 1px solid var(--border-subtle);
+
+  color: var(--text-secondary);
+
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.table tbody tr:hover {
+  background: var(--surface-hover);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   TABLE SELECTED ROW
+   -------------------------------------------------------------------------- */
+
+.table-row--selected {
+  background: var(--surface-raised);
+}
+
+.table-row--selected:hover {
+  background: var(--surface-hover);
+}
+
+/* --------------------------------------------------------------------------
+   TABLE DISABLED ROW
+   -------------------------------------------------------------------------- */
+
+.table-row--disabled {
+  opacity: var(--interaction-opacity-disabled);
+}
+
+.table-row--disabled:hover {
+  background: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   TABLE ALIGNMENT
+   -------------------------------------------------------------------------- */
+
+.table-cell--center {
+  text-align: center;
+}
+
+.table-cell--end {
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   TABLE LOADING
+   -------------------------------------------------------------------------- */
+
+.table-loading {
+  position: relative;
+  min-height: 10rem;
+}
+
+.table-loading::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: var(--surface-card);
+
+  opacity: 0.55;
+
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+REDUCED MOTION
+-------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .list-item,
+  .pagination-item,
+  .table tbody tr,
+  .table-header--sortable {
+    transition: none;
+  }
+}

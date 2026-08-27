@@ -1,0 +1,412 @@
+/* ==========================================================================
+   ALERT
+   Persistent in-flow feedback message.
+   ========================================================================== */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  width: 100%;
+
+  padding: var(--space-4);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+
+  background: var(--surface-card);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   CONTENT
+   -------------------------------------------------------------------------- */
+
+.alert-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.alert-message {
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.alert-actions {
+  display: inline-flex;
+  align-items: center;
+
+  flex: 0 0 auto;
+
+  margin-top: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTS
+   -------------------------------------------------------------------------- */
+
+.alert-info {
+  border-color: var(--alert-info-border);
+  background: var(--alert-info-background);
+  color: var(--alert-info-text);
+}
+
+.alert-success {
+  border-color: var(--alert-success-border);
+  background: var(--alert-success-background);
+  color: var(--alert-success-text);
+}
+
+.alert-warning {
+  border-color: var(--alert-warning-border);
+  background: var(--alert-warning-background);
+  color: var(--alert-warning-text);
+}
+
+.alert-danger {
+  border-color: var(--alert-danger-border);
+  background: var(--alert-danger-background);
+  color: var(--alert-danger-text);
+}
+
+/* --------------------------------------------------------------------------
+   DISMISS
+   -------------------------------------------------------------------------- */
+
+.alert-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--button-min-height-sm);
+  height: var(--button-min-height-sm);
+
+  flex: 0 0 auto;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.alert-close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.alert-close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* --------------------------------------------------------------------------
+   REDUCED MOTION
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-close {
+    transition: none;
+  }
+}
+/* ==========================================================================
+   PROGRESS
+   Shows completion of an operation.
+   ========================================================================== */
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
+  width: 100%;
+}
+
+.progress-track {
+  position: relative;
+
+  width: 100%;
+  height: 0.5rem;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-full);
+
+  background: var(--surface-raised);
+}
+
+.progress-value {
+  height: 100%;
+  width: 0;
+
+  border-radius: inherit;
+
+  background: var(--brand-primary);
+
+  transition: width var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.progress--success .progress-value {
+  background: var(--color-success);
+}
+
+.progress--warning .progress-value {
+  background: var(--color-warning);
+}
+
+.progress--danger .progress-value {
+  background: var(--color-danger);
+}
+
+.progress--indeterminate .progress-value {
+  width: 40%;
+
+  animation: progress-indeterminate 1.4s var(--motion-ease-in-out) infinite;
+}
+
+.progress-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  color: var(--text-secondary);
+
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+}
+
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(150%);
+  }
+
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* ==========================================================================
+   SKELETON
+   Placeholder for loading content.
+   ========================================================================== */
+
+.skeleton {
+  display: block;
+
+  width: 100%;
+  min-height: 1rem;
+
+  border-radius: var(--radius-md);
+
+  background: linear-gradient(
+    90deg,
+    var(--surface-raised) 25%,
+    var(--surface-hover) 50%,
+    var(--surface-raised) 75%
+  );
+
+  background-size: 200% 100%;
+
+  animation: skeleton-shimmer 1.6s var(--motion-ease-in-out) infinite;
+}
+
+.skeleton--text {
+  height: 1rem;
+  min-height: 1rem;
+}
+
+.skeleton--heading {
+  height: 2rem;
+  min-height: 2rem;
+
+  max-width: 70%;
+}
+
+.skeleton--avatar {
+  width: 2.75rem;
+  min-width: 2.75rem;
+
+  height: 2.75rem;
+  min-height: 2.75rem;
+
+  border-radius: var(--radius-full);
+}
+
+.skeleton--circle {
+  border-radius: var(--radius-full);
+}
+
+.skeleton--button {
+  width: 7rem;
+  min-height: var(--button-min-height);
+
+  border-radius: var(--button-radius);
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ==========================================================================
+   TOAST
+   Temporary floating feedback.
+   ========================================================================== */
+
+.toast {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+
+  z-index: var(--z-tooltip);
+
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  width: min(24rem, calc(100vw - var(--space-8)));
+
+  padding: var(--space-4);
+
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+
+  background: var(--surface-card);
+  color: var(--text-primary);
+
+  box-shadow: var(--shadow-elevation-high);
+
+  transform: translateY(var(--space-3));
+  opacity: 0;
+
+  transition:
+    opacity var(--motion-duration-normal) var(--motion-ease-out),
+    transform var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast-info {
+  border-color: var(--alert-info-border);
+}
+
+.toast-success {
+  border-color: var(--alert-success-border);
+}
+
+.toast-warning {
+  border-color: var(--alert-warning-border);
+}
+
+.toast-danger {
+  border-color: var(--alert-danger-border);
+}
+
+.toast-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  min-width: 0;
+
+  flex: 1 1 auto;
+}
+
+.toast-title {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.toast-message {
+  color: var(--text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.toast-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--button-min-height-sm);
+  height: var(--button-min-height-sm);
+
+  flex: 0 0 auto;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.toast-close:hover {
+  background: var(--surface-hover);
+  color: var(--text-primary);
+}
+
+.toast-close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (max-width: 40rem) {
+  .toast {
+    right: var(--space-3);
+    bottom: var(--space-3);
+
+    width: calc(100vw - var(--space-6));
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-value,
+  .skeleton,
+  .toast {
+    animation: none;
+    transition: none;
+  }
+
+  .toast {
+    transform: none;
+  }
+}

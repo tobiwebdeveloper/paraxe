@@ -6,11 +6,11 @@ This is the **source of truth** for every token name and default value.
 ## Import order
 
 ```css
-@import "@loba/design/tokens.css";            /* 1. Structural (non-color) */
-@import "@loba/design/presets/default.css";   /* 2. Personality */
-@import "@loba/design/themes/default.css";    /* 3. Colors (dark default) */
-@import "@loba/design/themes/light.css";      /* 3b. Optional light theme */
-@import "@loba/design/components.css";        /* 4. Framework-agnostic component classes (non-@loba/ui) */
+@import "@loba/design/tokens.css"; /* 1. Structural (non-color) */
+@import "@loba/design/presets/default.css"; /* 2. Personality */
+@import "@loba/design/themes/default.css"; /* 3. Colors (dark default) */
+@import "@loba/design/themes/light.css"; /* 3b. Optional light theme */
+@import "@loba/design/components.css"; /* 4. Framework-agnostic component classes (non-@loba/ui) */
 ```
 
 ## Structure
@@ -59,4 +59,3 @@ The Loba design system is guided by three documents that sit above the tokens:
 ## Contract
 
 See [CONTRACT.md](../CONTRACT.md) — FROZEN v1.0. Token renames are breaking changes.
-

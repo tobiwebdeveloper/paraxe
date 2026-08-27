@@ -30,9 +30,7 @@ OVERLAYS
 
   opacity: 0;
 
-  transition:
-    opacity var(--motion-duration-normal)
-    var(--motion-ease-out);
+  transition: opacity var(--motion-duration-normal) var(--motion-ease-out);
 }
 
 .dialog--open {
@@ -47,10 +45,7 @@ OVERLAYS
   position: relative;
   z-index: 1;
 
-  width: min(
-    100%,
-    var(--dialog-width, 32rem)
-  );
+  width: min(100%, var(--dialog-width, 32rem));
 
   max-height: calc(100vh - var(--space-12));
 
@@ -58,9 +53,7 @@ OVERLAYS
 
   padding: var(--card-padding);
 
-  border:
-    1px solid
-    var(--card-border);
+  border: 1px solid var(--card-border);
 
   border-radius: var(--card-radius);
 
@@ -70,22 +63,17 @@ OVERLAYS
   box-shadow: var(--shadow-elevation-high);
 
   opacity: 0;
-  transform: translateY(
-    var(--space-2)
-  ) scale(0.98);
+  transform: translateY(var(--space-2)) scale(0.98);
 
   transition:
-    opacity var(--motion-duration-normal)
-    var(--motion-ease-out),
-    transform var(--motion-duration-normal)
-    var(--motion-ease-out);
+    opacity var(--motion-duration-normal) var(--motion-ease-out),
+    transform var(--motion-duration-normal) var(--motion-ease-out);
 }
 
 .dialog--open .dialog-content {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-
 
 /* ==========================================================================
    DIALOG CLOSE
@@ -114,10 +102,8 @@ OVERLAYS
   cursor: pointer;
 
   transition:
-    background-color var(--motion-duration-fast)
-      var(--motion-ease-out),
-    color var(--motion-duration-fast)
-      var(--motion-ease-out);
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
 }
 
 .dialog-close:hover {
@@ -126,14 +112,10 @@ OVERLAYS
 }
 
 .dialog-close:focus-visible {
-  outline:
-    var(--focus-ring-width)
-    solid
-    var(--focus-ring-color);
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
 
   outline-offset: var(--focus-ring-offset);
 }
-
 
 /* ==========================================================================
    DIALOG RESPONSIVE
@@ -143,30 +125,22 @@ OVERLAYS
   .dialog {
     align-items: flex-end;
 
-    padding:
-      var(--space-3);
+    padding: var(--space-3);
   }
 
   .dialog-content {
     width: 100%;
     max-height: calc(100vh - var(--space-6));
 
-    border-radius:
-      var(--card-radius)
-      var(--card-radius)
-      0
-      0;
+    border-radius: var(--card-radius) var(--card-radius) 0 0;
 
-    transform: translateY(
-      var(--space-4)
-    );
+    transform: translateY(var(--space-4));
   }
 
   .dialog--open .dialog-content {
     transform: translateY(0);
   }
 }
-
 
 /* ==========================================================================
    REDUCED MOTION
@@ -195,7 +169,6 @@ OVERLAYS
   pointer-events: auto;
 }
 
-
 /* ==========================================================================
    BACKDROP
    ========================================================================== */
@@ -207,7 +180,7 @@ OVERLAYS
   border: 0;
   padding: 0;
 
-   background: var(--overlay-scrim);
+  background: var(--overlay-scrim);
 
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -216,15 +189,12 @@ OVERLAYS
 
   cursor: default;
 
-  transition:
-    opacity var(--motion-duration-normal)
-    var(--motion-ease-out);
+  transition: opacity var(--motion-duration-normal) var(--motion-ease-out);
 }
 
 .drawer--open .drawer-backdrop {
   opacity: 1;
 }
-
 
 /* ==========================================================================
    PANEL
@@ -238,10 +208,7 @@ OVERLAYS
   display: flex;
   flex-direction: column;
 
-  width: min(
-    var(--drawer-width, 28rem),
-    100vw
-  );
+  width: min(var(--drawer-width, 28rem), 100vw);
 
   background: var(--card-background);
   color: var(--text-primary);
@@ -253,11 +220,8 @@ OVERLAYS
 
   overflow: hidden;
 
-  transition:
-    transform var(--motion-duration-normal)
-    var(--motion-ease-out);
+  transition: transform var(--motion-duration-normal) var(--motion-ease-out);
 }
-
 
 /* ==========================================================================
    SIDES
@@ -283,7 +247,6 @@ OVERLAYS
   transform: translateX(0);
 }
 
-
 /* ==========================================================================
    CONTENT
    ========================================================================== */
@@ -296,7 +259,6 @@ OVERLAYS
 
   overflow-y: auto;
 }
-
 
 /* ==========================================================================
    CLOSE
@@ -323,10 +285,8 @@ OVERLAYS
   cursor: pointer;
 
   transition:
-    background-color var(--motion-duration-fast)
-      var(--motion-ease-out),
-    color var(--motion-duration-fast)
-      var(--motion-ease-out);
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out);
 }
 
 .drawer-close:hover {
@@ -335,14 +295,10 @@ OVERLAYS
 }
 
 .drawer-close:focus-visible {
-  outline:
-    var(--focus-ring-width)
-    solid
-    var(--focus-ring-color);
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
 
   outline-offset: var(--focus-ring-offset);
 }
-
 
 /* ==========================================================================
    MOBILE
@@ -353,7 +309,6 @@ OVERLAYS
     width: 100%;
   }
 }
-
 
 /* ==========================================================================
    REDUCED MOTION
@@ -384,10 +339,7 @@ OVERLAYS
   z-index: var(--z-popover);
 
   width: max-content;
-  max-width: min(
-    22rem,
-    calc(100vw - var(--space-8))
-  );
+  max-width: min(22rem, calc(100vw - var(--space-8)));
 
   padding: var(--space-4);
 
@@ -441,7 +393,6 @@ OVERLAYS
   right: calc(100% + var(--space-2));
 }
 
-
 /* ==========================================================================
    TOOLTIP
    ========================================================================== */
@@ -462,9 +413,7 @@ OVERLAYS
   width: max-content;
   max-width: 18rem;
 
-  padding:
-    var(--space-2)
-    var(--space-3);
+  padding: var(--space-2) var(--space-3);
 
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-sm);
@@ -544,7 +493,6 @@ OVERLAYS
   transform: translate(0, -50%);
 }
 
-
 /* ==========================================================================
    REDUCED MOTION
    ========================================================================== */
@@ -554,37 +502,4 @@ OVERLAYS
   .tooltip-content {
     transition: none;
   }
-}
-/* ==========================================================================
-   ALERT
-   Persistent in-flow feedback message.
-   ========================================================================== */
-
-.alert {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-
-  width: 100%;
-
-  padding: v;
-  flex-direction: column;
-  gap: var(--space-1);
-
-  min-width: 0;
-  flex: 1 1 auto;
-}
-
-.alert-message {
-  color: var(--text-secondary);
-  line-height: var(--line-height-normal);
-}
-
-.alert-actions {
-  display: inline-flex;
-  align-items: center;
-
-  flex: 0 0 auto;
-
-  margin-top: var(--space-3);
 }

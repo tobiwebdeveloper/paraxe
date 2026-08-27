@@ -1,0 +1,457 @@
+/* ==========================================================================
+   FORMS
+   ========================================================================== */
+.form-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-gap-sm);
+}
+
+/* ==========================================================================
+   CHECKBOXES
+   ========================================================================== */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  width: fit-content;
+
+  color: var(--form-text);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-control {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--icon-button-size-sm);
+  height: var(--icon-button-size-sm);
+
+  flex: 0 0 auto;
+
+  border: 1px solid var(--form-border);
+  border-radius: var(--radius-sm);
+
+  background: var(--form-background);
+  color: var(--text-on-brand);
+
+  transition: var(--transition-fast);
+}
+
+.checkbox-control::after {
+  content: "✓";
+
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+
+  opacity: 0;
+  transform: scale(0.7);
+
+  transition: var(--transition-fast);
+}
+
+.checkbox:hover .checkbox-control {
+  border-color: var(--form-border-hover);
+}
+
+.checkbox--checked .checkbox-control {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.checkbox--checked .checkbox-control::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.checkbox--disabled {
+  opacity: var(--interaction-opacity-disabled);
+  cursor: not-allowed;
+}
+
+.checkbox:focus-within .checkbox-control {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ==========================================================================
+   RADIO
+   ========================================================================== */
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  width: fit-content;
+
+  color: var(--form-text);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-control {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--icon-button-size-sm);
+  height: var(--icon-button-size-sm);
+
+  flex: 0 0 auto;
+
+  border: 1px solid var(--form-border);
+  border-radius: var(--radius-full);
+
+  background: var(--form-background);
+
+  transition: var(--transition-fast);
+}
+
+.radio-control::after {
+  content: "";
+
+  width: 0.5rem;
+  height: 0.5rem;
+
+  border-radius: var(--radius-full);
+
+  background: var(--brand-primary);
+
+  opacity: 0;
+  transform: scale(0.5);
+
+  transition: var(--transition-fast);
+}
+
+.radio:hover .radio-control {
+  border-color: var(--form-border-hover);
+}
+
+.radio--checked .radio-control {
+  border-color: var(--brand-primary);
+}
+
+.radio--checked .radio-control::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.radio--disabled {
+  opacity: var(--interaction-opacity-disabled);
+  cursor: not-allowed;
+}
+
+.radio:focus-within .radio-control {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ==========================================================================
+   SWITCH
+   ========================================================================== */
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+
+  width: fit-content;
+
+  color: var(--form-text);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-normal);
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-control {
+  position: relative;
+
+  width: 2.75rem;
+  height: 1.5rem;
+
+  flex: 0 0 auto;
+
+  border: 1px solid var(--form-border);
+  border-radius: var(--radius-full);
+
+  background: var(--form-background);
+
+  transition: var(--transition-fast);
+}
+
+.switch-control::after {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+
+  width: 1rem;
+  height: 1rem;
+
+  border-radius: var(--radius-full);
+
+  background: var(--text-muted);
+
+  transform: translateY(-50%);
+
+  transition:
+    left var(--motion-duration-fast) var(--motion-ease-out),
+    background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.switch:hover .switch-control {
+  border-color: var(--form-border-hover);
+}
+
+.switch--checked .switch-control {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+}
+
+.switch--checked .switch-control::after {
+  left: calc(100% - 1.2rem);
+  background: var(--text-on-brand);
+}
+
+.switch--disabled {
+  opacity: var(--interaction-opacity-disabled);
+  cursor: not-allowed;
+}
+
+.switch:focus-within .switch-control {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ==========================================================================
+   CHOICE GROUP
+   ========================================================================== */
+
+.choice-group {
+  display: grid;
+  gap: var(--space-2);
+
+  width: 100%;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  min-height: var(--button-min-height);
+
+  padding: var(--space-3) var(--space-4);
+
+  border: 1px solid var(--form-border);
+  border-radius: var(--radius-md);
+
+  background: var(--form-background);
+  color: var(--form-text);
+
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+
+  text-align: left;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    border-color var(--motion-duration-fast) var(--motion-ease-out),
+    color var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.choice:hover {
+  border-color: var(--form-border-hover);
+  color: var(--text-primary);
+  transform: translateY(var(--interaction-lift-sm));
+}
+
+.choice--selected {
+  background: var(--surface-raised);
+  border-color: var(--brand-primary);
+  color: var(--text-primary);
+}
+
+.choice--disabled {
+  opacity: var(--interaction-opacity-disabled);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.choice:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+.choice-group--multiple .choice--selected {
+  background: var(--brand-primary-muted);
+}
+
+/* --------------------------------------------------------------------------
+   CHOICE GROUP LAYOUT
+   -------------------------------------------------------------------------- */
+
+.choice-group--grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.choice-group--grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-group--grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+/* ==========================================================================
+   CUSTOM FORM CONTROL INPUTS
+   Native inputs remain accessible but are visually hidden.
+   ========================================================================== */
+
+/* ==========================================================================
+   CUSTOM FORM CONTROL INPUTS
+   ========================================================================== */
+
+.checkbox,
+.radio,
+.switch {
+  position: relative;
+}
+
+.checkbox > input,
+.radio > input,
+.switch > input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  margin: 0;
+  padding: 0;
+
+  opacity: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  pointer-events: none;
+}
+.checkbox,
+.radio,
+.switch {
+  position: relative;
+}
+
+.input,
+.textarea,
+.select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--form-padding-y) var(--form-padding-x);
+  background: var(--form-background);
+  border: 1px solid var(--form-border);
+  border-radius: var(--radius-md);
+  color: var(--form-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  transition: var(--transition-fast);
+}
+
+.input:hover,
+.textarea:hover,
+.select:hover {
+  border-color: var(--form-border-hover);
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  outline: var(--focus-ring-width) solid var(--form-border-focus);
+  outline-offset: var(--focus-ring-offset);
+  border-color: var(--form-border-focus);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--form-placeholder);
+}
+
+.input:disabled,
+.textarea:disabled,
+.select:disabled {
+  background: var(--form-bg-disabled);
+  border-color: var(--form-border-disabled);
+  color: var(--form-text-disabled);
+  cursor: not-allowed;
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+/* Error */
+.input-error {
+  border-color: var(--form-border-error);
+}
+
+.input-error:hover {
+  border-color: var(--form-border-error);
+}
+
+.input-error:focus {
+  outline: none;
+  border-color: var(--form-border-error);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--form-border-error) 25%, transparent);
+}
+
+/* Success */
+.input-success {
+  border-color: var(--form-border-success);
+}
+
+.input-success:hover {
+  border-color: var(--form-border-success);
+}
+
+.input-success:focus {
+  outline: none;
+  border-color: var(--form-border-success);
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--form-border-success) 25%, transparent);
+}

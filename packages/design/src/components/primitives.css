@@ -1,0 +1,306 @@
+/* -------------------------------------------------------------------------
+   DIVIDER
+   --------------------------------------------------------------------------- */
+.divider {
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+}
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   Spacing system classes — use these instead of ad-hoc padding/margin/gap.
+   ========================================================================== */
+
+.container {
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.container-narrow {
+  max-width: var(--container-narrow);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.section {
+  padding-block: var(--section-spacing);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--stack-gap);
+}
+
+.stack-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--stack-gap-sm);
+}
+
+.stack-lg {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--stack-gap-lg);
+}
+
+.stack-full {
+  width: 100%;
+}
+
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inline-gap);
+}
+
+.inline-sm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inline-gap-sm);
+}
+
+.inline-lg {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--inline-gap-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+.grid-sm {
+  display: grid;
+  gap: var(--grid-gap-sm);
+}
+
+.grid-lg {
+  display: grid;
+  gap: var(--grid-gap-lg);
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.grid-rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+/* ==========================================================================
+   SPACING UTILITIES
+   Gap + padding helpers for custom composition. Use these to elevate
+   layouts without writing ad-hoc inline styles — matching the gap/padding
+   ergonomics of hand-rolled HTML/CSS.
+   ========================================================================== */
+
+/* ---- Gap (flex / grid) ---- */
+.gap-0 {
+  gap: 0;
+}
+.gap-1 {
+  gap: var(--space-1);
+}
+.gap-2 {
+  gap: var(--space-2);
+}
+.gap-3 {
+  gap: var(--space-3);
+}
+.gap-4 {
+  gap: var(--space-4);
+}
+.gap-5 {
+  gap: var(--space-5);
+}
+.gap-6 {
+  gap: var(--space-6);
+}
+.gap-8 {
+  gap: var(--space-8);
+}
+.gap-10 {
+  gap: var(--space-10);
+}
+.gap-12 {
+  gap: var(--space-12);
+}
+.gap-16 {
+  gap: var(--space-16);
+}
+
+.gap-x-2 {
+  column-gap: var(--space-2);
+}
+.gap-x-4 {
+  column-gap: var(--space-4);
+}
+.gap-x-6 {
+  column-gap: var(--space-6);
+}
+.gap-x-8 {
+  column-gap: var(--space-8);
+}
+
+.gap-y-2 {
+  row-gap: var(--space-2);
+}
+.gap-y-4 {
+  row-gap: var(--space-4);
+}
+.gap-y-6 {
+  row-gap: var(--space-6);
+}
+.gap-y-8 {
+  row-gap: var(--space-8);
+}
+
+/* ---- Padding (all sides) ---- */
+.p-0 {
+  padding: 0;
+}
+.p-1 {
+  padding: var(--space-1);
+}
+.p-2 {
+  padding: var(--space-2);
+}
+.p-3 {
+  padding: var(--space-3);
+}
+.p-4 {
+  padding: var(--space-4);
+}
+.p-5 {
+  padding: var(--space-5);
+}
+.p-6 {
+  padding: var(--space-6);
+}
+.p-8 {
+  padding: var(--space-8);
+}
+.p-10 {
+  padding: var(--space-10);
+}
+.p-12 {
+  padding: var(--space-12);
+}
+
+/* ---- Padding (block axis) ---- */
+.py-0 {
+  padding-block: 0;
+}
+.py-1 {
+  padding-block: var(--space-1);
+}
+.py-2 {
+  padding-block: var(--space-2);
+}
+.py-3 {
+  padding-block: var(--space-3);
+}
+.py-4 {
+  padding-block: var(--space-4);
+}
+.py-5 {
+  padding-block: var(--space-5);
+}
+.py-6 {
+  padding-block: var(--space-6);
+}
+.py-8 {
+  padding-block: var(--space-8);
+}
+.py-10 {
+  padding-block: var(--space-10);
+}
+.py-12 {
+  padding-block: var(--space-12);
+}
+.py-16 {
+  padding-block: var(--space-16);
+}
+.py-20 {
+  padding-block: var(--space-20);
+}
+.py-24 {
+  padding-block: var(--space-24);
+}
+
+/* ---- Padding (inline axis) ---- */
+.px-0 {
+  padding-inline: 0;
+}
+.px-1 {
+  padding-inline: var(--space-1);
+}
+.px-2 {
+  padding-inline: var(--space-2);
+}
+.px-3 {
+  padding-inline: var(--space-3);
+}
+.px-4 {
+  padding-inline: var(--space-4);
+}
+.px-5 {
+  padding-inline: var(--space-5);
+}
+.px-6 {
+  padding-inline: var(--space-6);
+}
+.px-8 {
+  padding-inline: var(--space-8);
+}
+.px-10 {
+  padding-inline: var(--space-10);
+}
+.px-12 {
+  padding-inline: var(--space-12);
+}

@@ -15,7 +15,7 @@
     "./style.css": "./src/style.css",
     "./tokens.css": "./src/tokens.css",
     "./theme.css": "./src/themes/default.css",
-    "./components.css": "./src/components.css",
+    "./components.css": "./src/components/index.css",
     "./themes/*.css": "./src/themes/*.css",
     "./presets/*.css": "./src/presets/*.css",
     "./package.json": "./package.json"

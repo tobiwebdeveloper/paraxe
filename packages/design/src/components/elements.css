@@ -67,7 +67,6 @@
   border-color: var(--button-primary-disabled-border);
 }
 
-
 .btn-secondary {
   background: var(--button-secondary-bg);
   color: var(--button-secondary-text);
@@ -88,7 +87,6 @@
   color: var(--button-secondary-disabled-text);
   border-color: var(--button-secondary-disabled-border);
 }
-
 
 .btn-destructive {
   background: var(--button-destructive-bg);
@@ -111,7 +109,6 @@
   border-color: var(--button-destructive-disabled-border);
 }
 
-
 .btn-ghost {
   background: var(--button-ghost-bg);
   color: var(--button-ghost-text);
@@ -132,7 +129,6 @@
   color: var(--button-ghost-disabled-text);
   border-color: var(--button-ghost-disabled-border);
 }
-
 
 /* --------------------------------------------------------------------------
    SIZES
@@ -156,7 +152,6 @@
   font-size: var(--font-size-base);
 }
 
-
 /* --------------------------------------------------------------------------
    WIDTH
    -------------------------------------------------------------------------- */
@@ -164,7 +159,6 @@
 .btn-full {
   width: 100%;
 }
-
 
 /* --------------------------------------------------------------------------
    ICON-ONLY
@@ -175,7 +169,6 @@
   padding-inline: 0;
 }
 
-
 /* --------------------------------------------------------------------------
    LOADING
    -------------------------------------------------------------------------- */
@@ -185,7 +178,6 @@
   pointer-events: none;
 }
 
-
 /* --------------------------------------------------------------------------
    REDUCED MOTION
    -------------------------------------------------------------------------- */
@@ -194,4 +186,223 @@
   .btn {
     transition: none;
   }
+}
+.surface {
+  width: 100%;
+}
+
+.surface-base {
+  background: var(--surface-base);
+}
+
+.surface-raised {
+  background: var(--surface-raised);
+}
+
+.surface-card {
+  background: var(--surface-card);
+}
+
+.surface-elevated-1 {
+  background: var(--surface-elevated-1);
+}
+
+.surface-elevated-2 {
+  background: var(--surface-elevated-2);
+}
+
+.surface-elevated-3 {
+  background: var(--surface-elevated-3);
+}
+
+/* --------------------------------------------------------------------------
+   SURFACE EFFECTS
+   -------------------------------------------------------------------------- */
+
+.surface-glass {
+  background: var(--glass-background);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+
+  -webkit-backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
+
+  box-shadow: var(--card-highlight, inset 0 1px 0 0 rgb(255 255 255 / 0.08));
+}
+
+.surface-glass-strong {
+  background: var(--surface-glass-strong);
+  border: 1px solid var(--glass-border);
+
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+
+  -webkit-backdrop-filter: blur(var(--glass-blur))
+    saturate(var(--glass-saturate));
+
+  box-shadow: var(--card-highlight, inset 0 1px 0 0 rgb(255 255 255 / 0.08));
+}
+
+/* ==========================================================================
+   CARDS
+   Content container / grouping primitive.
+   ========================================================================== */
+
+.card {
+  width: 100%;
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+
+  background: var(--card-background);
+  color: var(--text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTS
+   -------------------------------------------------------------------------- */
+
+.card-default {
+  border: 1px solid transparent;
+}
+
+.card-outlined {
+  border: 1px solid var(--card-border);
+}
+
+.card-elevated {
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+.card-interactive {
+  border: 1px solid var(--card-border);
+
+  transition:
+    border-color var(--motion-duration-normal) var(--motion-ease-out),
+    box-shadow var(--motion-duration-normal) var(--motion-ease-out),
+    transform var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.card-interactive:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: var(--shadow-elevation-medium);
+  transform: translateY(var(--interaction-lift));
+}
+
+.card-interactive:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+
+  outline-offset: var(--focus-ring-offset);
+}
+
+.card-selected {
+  border: 1px solid var(--border-focus);
+  box-shadow: var(--shadow-elevation-low);
+}
+
+/* --------------------------------------------------------------------------
+   REDUCED MOTION
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .card-interactive {
+    transition: none;
+  }
+
+  .card-interactive:hover {
+    transform: none;
+  }
+}
+/* ==========================================================================
+   BADGES
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--badge-gap);
+
+  min-height: var(--badge-min-height);
+  padding: var(--badge-padding-y) var(--badge-padding-x);
+
+  background: var(--badge-background);
+  border: 1px solid var(--badge-border);
+  border-radius: var(--badge-radius);
+
+  color: var(--badge-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   VARIANTS
+   -------------------------------------------------------------------------- */
+
+.badge-default {
+  background: var(--badge-default-background);
+  border-color: var(--badge-default-border);
+  color: var(--badge-default-text);
+}
+
+.badge-success {
+  background: var(--badge-success-background);
+  border-color: var(--badge-success-border);
+  color: var(--badge-success-text);
+}
+
+.badge-warning {
+  background: var(--badge-warning-background);
+  border-color: var(--badge-warning-border);
+  color: var(--badge-warning-text);
+}
+
+.badge-danger {
+  background: var(--badge-danger-background);
+  border-color: var(--badge-danger-border);
+  color: var(--badge-danger-text);
+}
+
+.badge-info {
+  background: var(--badge-info-background);
+  border-color: var(--badge-info-border);
+  color: var(--badge-info-text);
+}
+
+.badge-brand {
+  background: var(--badge-brand-background);
+  border-color: var(--badge-brand-border);
+  color: var(--badge-brand-text);
+}
+/* ========================================================================
+   TAGS
+   ======================================================================== */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--tag-gap);
+
+  min-height: var(--tag-min-height);
+  padding: var(--tag-padding-y) var(--tag-padding-x);
+
+  background: var(--tag-background);
+  border: 1px solid var(--tag-border);
+  border-radius: var(--tag-radius);
+
+  color: var(--tag-text);
+  font-family: var(--font-family-body);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+
+  white-space: nowrap;
+}
+.badge,
+.tag,
+.btn {
+  width: fit-content;
 }

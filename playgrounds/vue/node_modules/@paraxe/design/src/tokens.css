@@ -34,7 +34,6 @@
    ========================================================================== */
 
 :root {
-
   /* =====================================================
      SPACING SCALE
      4px base
@@ -73,7 +72,6 @@
   --space-80: 20rem;
   --space-96: 24rem;
 
-
   /* =====================================================
      SPACING ROLES
      ===================================================== */
@@ -103,7 +101,6 @@
 
   --grid-min: 16rem;
 
-
   /* =====================================================
      LAYOUT
      ===================================================== */
@@ -118,7 +115,6 @@
   --content-width-narrow: 65ch;
   --content-width-readable: 72ch;
   --content-width-wide: 80ch;
-
 
   /* =====================================================
      SECTION COMPOSITION
@@ -141,7 +137,6 @@
 
   --section-radius: var(--radius-3xl);
 
-
   /* =====================================================
      SECTION RHYTHM
      Background roles reference theme tokens.
@@ -154,7 +149,6 @@
   --section-bg-surface: var(--surface-card);
   --section-bg-subtle: var(--surface-base);
   --section-bg-brand: var(--brand-primary-muted);
-
 
   /* =====================================================
      Z-INDEX
@@ -170,38 +164,19 @@
   --z-popover: 95;
   --z-tooltip: 100;
 
-
   /* =====================================================
      TYPOGRAPHY — FAMILIES
      ===================================================== */
 
   --font-family-display:
-    "Plus Jakarta Sans",
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans";
+    "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans";
 
   --font-family-body:
-    "Plus Jakarta Sans",
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans";
+    "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans";
 
-  --font-family-mono:
-    "JetBrains Mono",
-    "Fira Code",
-    monospace;
-
+  --font-family-mono: "JetBrains Mono", "Fira Code", monospace;
 
   /* =====================================================
      TYPOGRAPHY — WEIGHTS
@@ -213,7 +188,6 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-
 
   /* =====================================================
      TYPOGRAPHY — SIZES
@@ -233,7 +207,6 @@
   --font-size-8xl: 6rem;
   --font-size-9xl: 8rem;
 
-
   /* =====================================================
      TYPOGRAPHY — LINE HEIGHTS
      ===================================================== */
@@ -245,7 +218,6 @@
   --line-height-relaxed: 1.625;
   --line-height-loose: 2;
 
-
   /* =====================================================
      TYPOGRAPHY — LETTER SPACING
      ===================================================== */
@@ -256,7 +228,6 @@
   --letter-spacing-wide: 0.025em;
   --letter-spacing-wider: 0.05em;
   --letter-spacing-widest: 0.1em;
-
 
   /* =====================================================
      TYPOGRAPHY — SEMANTIC SCALE
@@ -322,7 +293,6 @@
 
   --typography-code-size: var(--font-size-sm);
 
-
   /* =====================================================
      RADIUS
      ===================================================== */
@@ -337,38 +307,27 @@
   --radius-3xl: 1.5rem;
   --radius-full: 9999px;
 
-
   /* =====================================================
      SHADOWS
      Structural values only.
      Brand tint is applied in theme tokens.
      ===================================================== */
 
-  --shadow-sm:
-    0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 
-  --shadow-base:
-    0 1px 3px 0 rgb(0 0 0 / 0.1),
-    0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-base: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 
-  --shadow-md:
-    0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 
   --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 
   --shadow-xl:
-    0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  --shadow-2xl:
-    0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
-  --shadow-inner:
-    inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
 
   /* =====================================================
      MOTION — DURATIONS
@@ -380,223 +339,193 @@
   --motion-duration-slower: 700ms;
   --motion-duration-slowest: 1000ms;
 
-
   /* =====================================================
      MOTION — EASINGS
      ===================================================== */
 
-  --motion-ease-in:
-    cubic-bezier(0.4, 0, 1, 1);
+  --motion-ease-in: cubic-bezier(0.4, 0, 1, 1);
 
-  --motion-ease-out:
-    cubic-bezier(0, 0, 0.2, 1);
+  --motion-ease-out: cubic-bezier(0, 0, 0.2, 1);
 
-  --motion-ease-in-out:
-    cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
-  --motion-ease-spring:
-    cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --motion-ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
-  --motion-ease-smooth:
-    cubic-bezier(0.22, 1, 0.36, 1);
-
+  --motion-ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* =====================================================
      MOTION — COMBINATORS
      ===================================================== */
 
-  --motion-fast:
-    var(--motion-duration-fast)
-    var(--motion-ease-out);
+  --motion-fast: var(--motion-duration-fast) var(--motion-ease-out);
 
-  --motion-normal:
-    var(--motion-duration-normal)
-    var(--motion-ease-smooth);
+  --motion-normal: var(--motion-duration-normal) var(--motion-ease-smooth);
 
-  --motion-slow:
-    var(--motion-duration-slow)
-    var(--motion-ease-smooth);
+  --motion-slow: var(--motion-duration-slow) var(--motion-ease-smooth);
 
-  --motion-slower:
-    var(--motion-duration-slower)
-    var(--motion-ease-smooth);
+  --motion-slower: var(--motion-duration-slower) var(--motion-ease-smooth);
 
   --ease-standard: var(--motion-ease-out);
   --ease-smooth: var(--motion-ease-smooth);
   --ease-spring: var(--motion-ease-spring);
 
-  --transition-fast:
-    all var(--motion-duration-fast) var(--motion-ease-out);
+  --transition-fast: all var(--motion-duration-fast) var(--motion-ease-out);
 
-  --transition-normal:
-    all var(--motion-duration-normal) var(--motion-ease-smooth);
+  --transition-normal: all var(--motion-duration-normal)
+    var(--motion-ease-smooth);
 
-  --transition-slow:
-    all var(--motion-duration-slow) var(--motion-ease-smooth);
+  --transition-slow: all var(--motion-duration-slow) var(--motion-ease-smooth);
 
---alert-info-background: color-mix(
-  in srgb,
-  var(--color-info) 10%,
-  transparent
-);
+  --alert-info-background: color-mix(
+    in srgb,
+    var(--color-info) 10%,
+    transparent
+  );
 
---alert-info-border: color-mix(
-  in srgb,
-  var(--color-info) 28%,
-  transparent
-);
+  --alert-info-border: color-mix(in srgb, var(--color-info) 28%, transparent);
 
---alert-info-text: var(--color-info);
+  --alert-info-text: var(--color-info);
 
+  --alert-success-background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent
+  );
 
---alert-success-background: color-mix(
-  in srgb,
-  var(--color-success) 10%,
-  transparent
-);
+  --alert-success-border: color-mix(
+    in srgb,
+    var(--color-success) 28%,
+    transparent
+  );
 
---alert-success-border: color-mix(
-  in srgb,
-  var(--color-success) 28%,
-  transparent
-);
+  --alert-success-text: var(--color-success);
 
---alert-success-text: var(--color-success);
+  --alert-warning-background: color-mix(
+    in srgb,
+    var(--color-warning) 10%,
+    transparent
+  );
 
+  --alert-warning-border: color-mix(
+    in srgb,
+    var(--color-warning) 28%,
+    transparent
+  );
 
---alert-warning-background: color-mix(
-  in srgb,
-  var(--color-warning) 10%,
-  transparent
-);
+  --alert-warning-text: var(--color-warning);
 
---alert-warning-border: color-mix(
-  in srgb,
-  var(--color-warning) 28%,
-  transparent
-);
+  --alert-danger-background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent
+  );
 
---alert-warning-text: var(--color-warning);
+  --alert-danger-border: color-mix(
+    in srgb,
+    var(--color-danger) 28%,
+    transparent
+  );
 
-
---alert-danger-background: color-mix(
-  in srgb,
-  var(--color-danger) 10%,
-  transparent
-);
-
---alert-danger-border: color-mix(
-  in srgb,
-  var(--color-danger) 28%,
-  transparent
-);
-
---alert-danger-text: var(--color-danger);
-/* =====================================================
+  --alert-danger-text: var(--color-danger);
+  /* =====================================================
    BADGES
    ===================================================== */
 
---badge-background: color-mix(
-  in srgb,
-  var(--surface-raised),
-  var(--text-primary) 8%
-);
---badge-border: var(--border-default);
---badge-text: var(--text-secondary);
+  --badge-background: color-mix(
+    in srgb,
+    var(--surface-raised),
+    var(--text-primary) 8%
+  );
+  --badge-border: var(--border-default);
+  --badge-text: var(--text-secondary);
 
-
-/* =====================================================
+  /* =====================================================
    BADGES
    ===================================================== */
 
---badge-background: color-mix(
-  in srgb,
-  var(--surface-raised),
-  var(--text-primary) 8%
-);
+  --badge-background: color-mix(
+    in srgb,
+    var(--surface-raised),
+    var(--text-primary) 8%
+  );
 
---badge-border: var(--border-default);
---badge-text: var(--text-secondary);
+  --badge-border: var(--border-default);
+  --badge-text: var(--text-secondary);
 
-
-/* -----------------------------------------------------
+  /* -----------------------------------------------------
    BADGE VARIANTS
    ----------------------------------------------------- */
 
---badge-default-background: color-mix(
-  in srgb,
-  var(--surface-raised),
-  var(--text-primary) 8%
-);
---badge-default-border: var(--border-default);
---badge-default-text: var(--text-secondary);
+  --badge-default-background: color-mix(
+    in srgb,
+    var(--surface-raised),
+    var(--text-primary) 8%
+  );
+  --badge-default-border: var(--border-default);
+  --badge-default-text: var(--text-secondary);
 
---badge-success-background: color-mix(
-  in srgb,
-  var(--color-success) 10%,
-  transparent
-);
---badge-success-border: color-mix(
-  in srgb,
-  var(--color-success) 28%,
-  transparent
-);
---badge-success-text: var(--color-success);
+  --badge-success-background: color-mix(
+    in srgb,
+    var(--color-success) 10%,
+    transparent
+  );
+  --badge-success-border: color-mix(
+    in srgb,
+    var(--color-success) 28%,
+    transparent
+  );
+  --badge-success-text: var(--color-success);
 
---badge-warning-background: color-mix(
-  in srgb,
-  var(--color-warning) 10%,
-  transparent
-);
---badge-warning-border: color-mix(
-  in srgb,
-  var(--color-warning) 28%,
-  transparent
-);
---badge-warning-text: var(--color-warning);
+  --badge-warning-background: color-mix(
+    in srgb,
+    var(--color-warning) 10%,
+    transparent
+  );
+  --badge-warning-border: color-mix(
+    in srgb,
+    var(--color-warning) 28%,
+    transparent
+  );
+  --badge-warning-text: var(--color-warning);
 
---badge-danger-background: color-mix(
-  in srgb,
-  var(--color-danger) 10%,
-  transparent
-);
---badge-danger-border: color-mix(
-  in srgb,
-  var(--color-danger) 28%,
-  transparent
-);
---badge-danger-text: var(--color-danger);
+  --badge-danger-background: color-mix(
+    in srgb,
+    var(--color-danger) 10%,
+    transparent
+  );
+  --badge-danger-border: color-mix(
+    in srgb,
+    var(--color-danger) 28%,
+    transparent
+  );
+  --badge-danger-text: var(--color-danger);
 
---badge-info-background: color-mix(
-  in srgb,
-  var(--color-info) 10%,
-  transparent
-);
---badge-info-border: color-mix(
-  in srgb,
-  var(--color-info) 28%,
-  transparent
-);
---badge-info-text: var(--color-info);
+  --badge-info-background: color-mix(
+    in srgb,
+    var(--color-info) 10%,
+    transparent
+  );
+  --badge-info-border: color-mix(in srgb, var(--color-info) 28%, transparent);
+  --badge-info-text: var(--color-info);
 
---badge-brand-background: color-mix(
-  in srgb,
-  var(--brand-primary) 10%,
-  transparent
-);
---badge-brand-border: color-mix(
-  in srgb,
-  var(--brand-primary) 28%,
-  transparent
-);
---badge-brand-text: var(--brand-primary);
+  --badge-brand-background: color-mix(
+    in srgb,
+    var(--brand-primary) 10%,
+    transparent
+  );
+  --badge-brand-border: color-mix(
+    in srgb,
+    var(--brand-primary) 28%,
+    transparent
+  );
+  --badge-brand-text: var(--brand-primary);
   /* =====================================================
    TAGS
    ===================================================== */
 
---tag-background: var(--surface-raised);
---tag-border: var(--border-subtle);
---tag-text: var(--text-muted);
+  --tag-background: var(--surface-raised);
+  --tag-border: var(--border-subtle);
+  --tag-text: var(--text-muted);
   /* =====================================================
      COMPONENT STRUCTURE — BUTTONS
      ===================================================== */
@@ -622,7 +551,6 @@
   --button-icon-size-sm: 0.875rem;
   --button-icon-size-lg: 1.125rem;
 
-
   /* =====================================================
      COMPONENT STRUCTURE — CARDS
      ===================================================== */
@@ -634,7 +562,6 @@
   --card-padding-lg: var(--space-8);
 
   --card-content-gap: var(--space-4);
-
 
   /* =====================================================
      COMPONENT STRUCTURE — BADGES
@@ -649,18 +576,18 @@
 
   --badge-min-height: 24px;
 
-/* =====================================================
+  /* =====================================================
    COMPONENT STRUCTURE — TAGS
    ===================================================== */
 
---tag-radius: var(--radius-md);
+  --tag-radius: var(--radius-md);
 
---tag-padding-x: var(--space-2);
---tag-padding-y: var(--space-1);
+  --tag-padding-x: var(--space-2);
+  --tag-padding-y: var(--space-1);
 
---tag-gap: var(--space-1);
+  --tag-gap: var(--space-1);
 
---tag-min-height: 24px;
+  --tag-min-height: 24px;
 
   /* =====================================================
      COMPONENT STRUCTURE — NAVIGATION
@@ -682,7 +609,6 @@
   --nav-gap: var(--space-2);
   --nav-content-gap: var(--space-8);
 
-
   /* =====================================================
      COMPONENT STRUCTURE — FORMS
      ===================================================== */
@@ -703,7 +629,6 @@
 
   --form-textarea-min-height: 120px;
 
-
   /* =====================================================
      COMPONENT STRUCTURE — MEDIA
      ===================================================== */
@@ -717,7 +642,6 @@
   --media-aspect-wide: 21 / 9;
   --media-aspect-portrait: 4 / 5;
   --media-aspect-tall: 3 / 4;
-
 
   /* =====================================================
      COMPONENT STRUCTURE — ICONS
@@ -733,7 +657,6 @@
   --icon-button-size: 44px;
   --icon-button-size-lg: 52px;
 
-
   /* =====================================================
      COMPONENT STRUCTURE — FOCUS
      ===================================================== */
@@ -741,7 +664,6 @@
   --focus-ring-width: 2px;
   --focus-ring-offset: 2px;
   --focus-ring-offset-lg: 4px;
-
 
   /* =====================================================
      RESPONSIVE BREAKPOINTS
@@ -758,7 +680,6 @@
   --breakpoint-xl: 1280px;
   --breakpoint-2xl: 1536px;
 
-
   /* =====================================================
      CONTENT / COMPOSITION LIMITS
      ===================================================== */
@@ -770,16 +691,13 @@
   --text-max-width-md: 48rem;
   --text-max-width-lg: 64rem;
 
-
   /* =====================================================
      ASPECT / GRID COMPOSITION
      ===================================================== */
 
-
   --grid-min-width-sm: 12rem;
   --grid-min-width: 16rem;
   --grid-min-width-lg: 20rem;
-
 
   /* =====================================================
      MOTION / INTERACTION ANCHORS
@@ -793,5 +711,4 @@
   --interaction-scale: 0.97;
 
   --interaction-opacity-disabled: 0.5;
-
 }

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   ANIMATION UTILITY CLASSES
+   Consume @keyframes from the project's animations.css / typography.css.
+   ========================================================================== */
+
+.animate-fade-in {
+  animation: fade-in var(--motion-duration-normal) var(--motion-ease-smooth)
+    forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--motion-duration-normal) var(--motion-ease-smooth)
+    forwards;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left var(--motion-duration-slow) var(--motion-ease-smooth)
+    forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right var(--motion-duration-slow)
+    var(--motion-ease-smooth) forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in var(--motion-duration-fast) var(--motion-ease-spring)
+    forwards;
+}

@@ -195,7 +195,7 @@ export const TOKEN_NAMES = {
   glassSaturate: "--glass-saturate",
   focusRingWidth: "--focus-ring-width",
   focusRingOffset: "--focus-ring-offset",
-} as const
+} as const;
 
 /** Color token names from themes/*.css (Layer 2). */
 export const COLOR_TOKEN_NAMES = {
@@ -330,24 +330,24 @@ export const COLOR_TOKEN_NAMES = {
   shadowElevationMedium: "--shadow-elevation-medium",
   shadowElevationHigh: "--shadow-elevation-high",
   shadowElevationModal: "--shadow-elevation-modal",
-} as const
+} as const;
 
-export type TokenName = (typeof TOKEN_NAMES)[keyof typeof TOKEN_NAMES]
-export type ColorTokenName = (typeof COLOR_TOKEN_NAMES)[keyof typeof COLOR_TOKEN_NAMES]
+export type TokenName = (typeof TOKEN_NAMES)[keyof typeof TOKEN_NAMES];
+export type ColorTokenName =
+  (typeof COLOR_TOKEN_NAMES)[keyof typeof COLOR_TOKEN_NAMES];
 
 /** All canonical token names (combination of Layer 1 + Layer 2). */
 export const ALL_TOKEN_NAMES = {
   ...TOKEN_NAMES,
   ...COLOR_TOKEN_NAMES,
-} as const
+} as const;
 
 /** Helper to create a `var()` reference for a canonical token. */
 export function token(name: TokenName | ColorTokenName): string {
-  return `var(${name})`
+  return `var(${name})`;
 }
 
 /** Import the CSS entry points so bundlers pick them up automatically. */
-import "./tokens.css"
-import "./themes/default.css"
-import "./presets/default.css"
-
+import "./tokens.css";
+import "./themes/default.css";
+import "./presets/default.css";

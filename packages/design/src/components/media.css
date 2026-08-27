@@ -1,0 +1,34 @@
+.media {
+  position: relative;
+  overflow: hidden;
+}
+
+.media img,
+.media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--media-radius);
+}
+
+.media-square {
+  aspect-ratio: 1 / 1;
+}
+
+.media-video {
+  aspect-ratio: 16 / 9;
+}
+
+.media-portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.media-wide {
+  aspect-ratio: 21 / 9;
+}
+
+.media-contain img,
+.media-contain video {
+  object-fit: contain;
+}

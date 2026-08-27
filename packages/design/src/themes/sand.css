@@ -7,26 +7,122 @@
 @import "./default.css";
 
 :root {
-  --brand-primary: #e1ca96;
-  --brand-primary-hover: #d4ba7e;
-  --brand-primary-active: #c7aa66;
-  --brand-primary-light: #efe0be;
-  --brand-primary-muted: color-mix(in srgb, #e1ca96 15%, transparent);
-  --brand-glow: color-mix(in srgb, #e1ca96 25%, transparent);
-  --text-on-brand: #1f1b16;
 
+  /* =====================================================
+     CONTRAST KNOB
+     Global contrast multiplier (0.6–1.4). Consumed by surfaces
+     and shadows to control perceptual depth/hierarchy.
+  ===================================================== */
+  --contrast: 1;
+
+
+  /* =====================================================
+     BRAND
+     A single brand colour generates the full colour family.
+  ===================================================== */
+  --brand-primary: oklch(0.846 0.073 86.8);
+  --brand-primary-hover: oklch(0.786 0.073 86.8);
+  --brand-primary-active: oklch(0.746 0.073 86.8);
+  --brand-primary-light: oklch(0.980 0.073 86.8);
+  --brand-primary-muted: oklch(0.846 0.009 86.8 / 0.15);
+  --brand-glow: oklch(0.846 0.022 86.8 / 0.25);
+
+  /* Semantic text-on-brand — ensures readable contrast on brand backgrounds */
+  --text-on-brand: oklch(15.434% 0.00002 271.152);
+
+
+  /* =====================================================
+     SEMANTIC STATE COLOURS
+     Fixed values for application states.
+  ===================================================== */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-info: #3b82f6;
+
+
+  /* =====================================================
+     BACKGROUNDS
+  ===================================================== */
   --background-primary: #1f1b16;
-  --background-secondary: color-mix(in srgb, #1f1b16 92%, white);
+  --background-secondary: oklch(0.243 0.006 86.8);
 
-  --surface-base: color-mix(in srgb, #1f1b16 92%, white);
-  --surface-raised: color-mix(in srgb, #1f1b16 84%, white);
-  --surface-card: color-mix(in srgb, #1f1b16 88%, white);
-  --surface-hover: color-mix(in srgb, #1f1b16 84%, white);
 
-  --text-primary: color-mix(in srgb, #1f1b16 4%, white);
-  --text-secondary: color-mix(in srgb, #1f1b16 40%, white);
-  --text-muted: color-mix(in srgb, #1f1b16 60%, white);
-  --text-inverse: color-mix(in srgb, white 96%, black);
+  /* =====================================================
+     SURFACES
+     Intentional surface layers built from the background.
+  ===================================================== */
+  --surface-base: oklch(0.243 0.006 86.8);
+  --surface-raised: oklch(0.287 0.006 86.8);
+  --surface-card: oklch(0.263 0.006 86.8);
+  --surface-hover: oklch(0.307 0.006 86.8);
+
+  /* Premium brand-tinted card treatment */
+  --card-gradient: linear-gradient(180deg, oklch(0.846 0.004 86.8 / 0.06), transparent 45%);
+  --card-highlight: inset 0 1px 0 0 oklch(0.846 0.007 86.8 / 0.05);
+
+
+  /* =====================================================
+     TEXT
+  ===================================================== */
+  --text-primary: oklch(0.930 0.012 73.3);
+  --text-secondary: oklch(0.730 0.012 73.3);
+  --text-muted: oklch(0.550 0.012 73.3);
+  --text-inverse: oklch(0.090 0.012 73.3);
+
+  /* Compatibility aliases */
+  --text-accent: var(--brand-primary);
+  --text-link: var(--brand-primary);
+  --text-link-hover: var(--brand-primary-hover);
+
+
+  /* =====================================================
+     BORDERS
+  ===================================================== */
+  --border-default: oklch(0.295 0.002 73.3);
+  --border-strong: oklch(0.352 0.003 73.3);
+  --border-subtle: oklch(0.260 0.001 73.3);
+  --border-focus: oklch(0.535 0.031 80.1);
+
+
+/* =====================================================
+     GLASSMORPHISM (colour values — blur is in tokens.css)
+     Derived from background + brand tint for hue harmony.
+  ===================================================== */
+  --glass-background: oklch(0.275 0.007 86.8 / 0.28);
+  --glass-border: oklch(0.352 0.003 73.3 / 0.2);
+
+
+  /* =====================================================
+     OVERLAYS
+     Derived from background for natural depth.
+  ===================================================== */
+  --overlay-scrim: oklch(0.112 0.000 0.0 / 0.6);
+  --overlay-scrim-strong: oklch(0.090 0.000 0.0 / 0.75);
+
+
+  /* =====================================================
+     SHADOWS
+     Brand-tinted shadows for cohesive depth perception.
+  ===================================================== */
+  --shadow-elevation-low: 0 2px 8px oklch(0.000 0.000 86.8 / 0.08);
+  --shadow-elevation-medium: 0 4px 24px oklch(0.000 0.000 86.8 / 0.12);
+  --shadow-elevation-high: 0 8px 40px oklch(0.000 0.000 86.8 / 0.18);
+  --shadow-elevation-modal: 0 20px 60px oklch(0.000 0.000 86.8 / 0.24);
+
+
+  /* =====================================================
+     FOCUS RING (colour only — width/offset are in tokens.css)
+  ===================================================== */
+  --focus-ring-color: var(--border-focus);
+
+
+  /* =====================================================
+     SELECTION
+  ===================================================== */
+  --selection-background: var(--brand-primary);
+  --selection-text: #ffffff;
+
 }
 
 [data-theme="light"] {
